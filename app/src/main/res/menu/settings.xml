@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+            android:id="@+id/btn_done"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Cancel"
+            app:showAsAction="always" />
+    <item
+        android:id="@+id/btn_loadPlan"
+        android:icon="@drawable/ic_menu_send"
+        android:title="Load"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/btn_savePlan"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="Save"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/btn_newPlan"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="New"
+        app:showAsAction="always" />
+</menu>
