@@ -232,19 +232,19 @@ public class BroadcastService extends Service {
         btni0.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION); //TODO could be useless
         //btni0.setAction("0");
         PendingIntent pauseIntent = PendingIntent.getBroadcast(this, 1, btni0, PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.addAction(R.mipmap.ic_launcher_round, "pause", pauseIntent);
+        builder.addAction(R.drawable.ic_white_pause, "pause", pauseIntent);
 
         Intent btni1 = new Intent(COUNTDOWN_BR);
         btni1.putExtra("start_pause", 1);
         //btni1.setAction("1");
         PendingIntent resumeIntent = PendingIntent.getBroadcast(this, 2, btni1, PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.addAction(R.mipmap.ic_launcher_round, "resume", resumeIntent);
+        builder.addAction(R.drawable.ic_white_play, "resume", resumeIntent);
 
         Intent btni2 = new Intent(COUNTDOWN_BR);
         btni2.putExtra("start_pause", 2);
         //btni2.setAction("2");
         PendingIntent nextIntent = PendingIntent.getBroadcast(this, 3, btni2, PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.addAction(R.mipmap.ic_launcher_round, "next", nextIntent);
+        builder.addAction(R.drawable.ic_white_stop, "stop", nextIntent);
 
         b = builder;
         Notification notification = builder.build();

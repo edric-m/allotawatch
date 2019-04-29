@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
         <item
             android:id="@+id/btn_done"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_white_back_arrow"
             android:title="Cancel"
             app:showAsAction="always" />
     <item
         android:id="@+id/btn_loadPlan"
-        android:icon="@drawable/ic_menu_send"
+        android:icon="@drawable/ic_white_load"
         android:title="Load"
         app:showAsAction="always" />
     <item
         android:id="@+id/btn_savePlan"
-        android:icon="@drawable/ic_menu_gallery"
+        android:icon="@drawable/ic_white_save"
         android:title="Save"
         app:showAsAction="always" />
     <item
         android:id="@+id/btn_newPlan"
-        android:icon="@drawable/ic_menu_slideshow"
+        android:icon="@drawable/ic_white_new_plan"
         android:title="New"
         app:showAsAction="always" />
 </menu>

@@ -17,6 +17,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -51,8 +52,9 @@ public class MainActivity extends AppCompatActivity
     private ConstraintLayout layout; /*!< Needed to set the background colour of the activity */
     private ImageView mImageView; /*!< Controls the background image */
     private Button mClearBtn;//, mAlarmBtn, mStartBtn;
+    private Menu menu;
     //private MenuItem mAlarmBtn;
-    private boolean alarmBtnVisible;
+    private boolean alarmBtnVisible, playBtnVisable;
 
     private long timePaused; /*!< Counts the amount of time the pause timer has run */
     private int switchedTime=0;
@@ -83,7 +85,8 @@ public class MainActivity extends AppCompatActivity
                         refreshDisplay(false);
                         break;
                     case 2:
-                        switchTask(Direction.NEXT);
+                        //switchTask(Direction.NEXT);
+                        toggleTimer();
                         break;
                     default:
                         break;
@@ -145,6 +148,12 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.main, menu);
         MenuItem mAlarmBtn = (MenuItem) menu.findItem(R.id.brn_alarm);
         mAlarmBtn.setVisible(alarmBtnVisible);
+        MenuItem mPlayBtn = (MenuItem) menu.findItem(R.id.btn_startTimer);
+        if(playBtnVisable){
+            mPlayBtn.setIcon(R.drawable.ic_white_play);
+        } else {
+            mPlayBtn.setIcon(R.drawable.ic_white_stop);
+        }
         return true;
     }
 
@@ -220,6 +229,7 @@ public class MainActivity extends AppCompatActivity
         //mAlarmBtn.setVisible(false);
         //mAlarmBtn.setEnabled(false);
         alarmBtnVisible = false;
+        playBtnVisable = true;
         mtaskIndex = findViewById(R.id.textView_taskIndex);
         taskName = findViewById(R.id.task_name);
         taskTime = findViewById(R.id.task_time);
@@ -271,8 +281,8 @@ public class MainActivity extends AppCompatActivity
     }
     @Override
     protected void onPause() {
-        super.onPause(); //TODO: should these be at the beginning of the function?
         saveDb();
+        super.onPause(); //TODO: should these be at the beginning of the function?
     }
     @Override
     protected void onResume() {
@@ -512,11 +522,16 @@ public class MainActivity extends AppCompatActivity
             if (mServiceStarted) {
                 stopTimer();
                 //mStartBtn.setText("Start");
+                //menu.getItem(R.id.btn_startTimer).setIcon(ContextCompat.getDrawable(this, R.drawable.ic_white_play));
+                invalidateOptionsMenu();
+                playBtnVisable = true;
 
             } else {
                 startTimer();
                 //mStartBtn.setText("Stop");
-
+                //menu.getItem(R.id.btn_startTimer).setIcon(ContextCompat.getDrawable(this, R.drawable.ic_white_stop));
+                invalidateOptionsMenu();
+                playBtnVisable = false;
             }
         }
     }

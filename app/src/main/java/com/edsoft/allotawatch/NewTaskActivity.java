@@ -198,7 +198,7 @@ public class NewTaskActivity extends AppCompatActivity {
         Intent data = new Intent();
         int x = (hoursSet * 60) + minSet;
         if(x <= 0) {
-            setResult(RESULT_OK, data);
+            setResult(RESULT_CANCELED, data);
             //TODO notify user that creation failed
         }
         else {

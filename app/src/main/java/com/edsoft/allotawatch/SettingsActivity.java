@@ -443,7 +443,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
     public void loadPlanToMain() {//TODO: actual load function
         //remove previous with 0 plan
         FeedReaderDbHelper db = new FeedReaderDbHelper(this);
-        db.deletePlan(0);
+        //db.deletePlan(0);
         //save tasks to 0 plan
         savePlan(0);
         db.updateAllTasks(taskList.getList());

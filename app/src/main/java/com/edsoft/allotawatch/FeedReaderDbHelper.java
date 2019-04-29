@@ -355,7 +355,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         int rowsAffected = 0;
 
         task selectedTask = taskList.get(0);
-        for(int x=1;x<taskList.size();x++) {
+        for(int x=0;x<taskList.size();x++) {
             //try {
             //contentValues.put(DbContract.FeedEntry.TASK_COLUMN_NAME, selectedTask.getName());
             contentValues.put(DbContract.FeedEntry.TASK_COLUMN_TIME_REMAINING, selectedTask.getTimeAllocated());
