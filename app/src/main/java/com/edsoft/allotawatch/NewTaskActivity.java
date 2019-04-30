@@ -149,7 +149,7 @@ public class NewTaskActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 minSet = (int) Math.round((double)progress * 0.6);
-                mMinLabel.setText("Mins: "+Double.toString(minSet));
+                mMinLabel.setText("Mins: "+Integer.toString(minSet));
             }
 
             @Override
