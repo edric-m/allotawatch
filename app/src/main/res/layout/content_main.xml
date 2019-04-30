@@ -8,7 +8,7 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main"
     android:id="@+id/layout"
-    android:background="@android:color/holo_blue_dark">
+    android:background="@color/colorTimerBackground">
 
     <ImageView
         android:id="@+id/imageview_back"
@@ -42,6 +42,7 @@
         android:layout_marginTop="140dp"
         android:text="create a new timer"
         android:textSize="30sp"
+        android:textColor="@color/TextColor"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,6 +54,7 @@
         android:layout_marginTop="200dp"
         android:text="to begin"
         android:textSize="36sp"
+        android:textColor="@color/TextColor"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,6 +66,7 @@
         android:layout_marginTop="250dp"
         android:textSize="30sp"
         android:text=""
+        android:textColor="@color/TextColor"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -74,9 +77,9 @@
         android:layout_height="35dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="10dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorTimerBackground"
         android:text="X"
-        android:textColor="#f7faff"
+        android:textColor="@color/TextColor"
         android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintRight_toRightOf="parent"
@@ -90,6 +93,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="50dp"
-        android:text=""/>
+        android:text=""
+        android:textColor="@color/TextColor"/>
 
 </android.support.constraint.ConstraintLayout>

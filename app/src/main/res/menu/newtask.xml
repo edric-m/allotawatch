@@ -6,4 +6,9 @@
         android:icon="@drawable/ic_white_tick"
         android:title="Search"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/btn_cancelNewTask"
+        android:icon="@drawable/ic_white_cancel"
+        android:title="Search"
+        app:showAsAction="ifRoom" />
 </menu>

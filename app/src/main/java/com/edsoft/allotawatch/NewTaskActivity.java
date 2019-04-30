@@ -79,6 +79,10 @@ public class NewTaskActivity extends AppCompatActivity {
             submitEntry();
             return true;
         }
+        if (id == R.id.btn_cancelNewTask) {
+            finish();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }

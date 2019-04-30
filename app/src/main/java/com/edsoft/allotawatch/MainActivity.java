@@ -148,6 +148,11 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.main, menu);
         MenuItem mAlarmBtn = (MenuItem) menu.findItem(R.id.brn_alarm);
         mAlarmBtn.setVisible(alarmBtnVisible);
+        if(alarmSet) {
+            mAlarmBtn.setIcon(R.drawable.ic_white_alarm_off);
+        } else {
+            mAlarmBtn.setIcon(R.drawable.ic_white_alarm);
+        }
         MenuItem mPlayBtn = (MenuItem) menu.findItem(R.id.btn_startTimer);
         if(playBtnVisable){
             mPlayBtn.setIcon(R.drawable.ic_white_play);
@@ -413,6 +418,7 @@ public class MainActivity extends AppCompatActivity
         alarmMin = mins * 1000*60; //repeater = alarmMin
         alarmSet = true;
         //mAlarmBtn.setText("stop "+ Integer.toString(mins)+" min alarm"); //TODO inform user somehow
+        invalidateOptionsMenu();
     }
     //////////////////////////////////////////////////////////////
     //                      METHODS
@@ -510,6 +516,7 @@ public class MainActivity extends AppCompatActivity
                 notifyAlarmEnd();
                 //turn off reciever
                 //mAlarmBtn.setText("set alarm"); //TODO inform user somehow
+                invalidateOptionsMenu();
                 alarmSet = false;
             } else {
                 alarmMin = alarmMin - 1000;
@@ -649,10 +656,10 @@ public class MainActivity extends AppCompatActivity
     private void setBackground(boolean paused) {
         //layout.setBackgroundColor(Color.parseColor("#1B1F59")); //in colors.xml
         if(paused) {
-            //mImageView.setImageResource(R.drawable.background_pause_small);
+            mImageView.setImageResource(R.drawable.background_pause_small);
         }
         else {
-            //mImageView.setImageResource(R.drawable.background_resume_small);
+            mImageView.setImageResource(R.drawable.background_resume_small);
         }
     }
 
@@ -727,6 +734,7 @@ public class MainActivity extends AppCompatActivity
             dialog.show(getSupportFragmentManager(), "DialogAlarm");
         } else {
             //mAlarmBtn.setText("set alarm"); //TODO inform user somehow
+            invalidateOptionsMenu();
             //this.unregisterReceiver(alarmBroadcast);
             //wl.release();
             //Log.d("alarm", "alarm un-register receiver");

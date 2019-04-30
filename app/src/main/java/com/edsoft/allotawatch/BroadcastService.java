@@ -213,7 +213,7 @@ public class BroadcastService extends Service {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"default");
 
-        builder.setSmallIcon(R.mipmap.ic_launcher_round);
+        builder.setSmallIcon(R.drawable.ic_action_name);
         builder.setLargeIcon(BitmapFactory.decodeResource(this.getResources(),
                 R.mipmap.ic_launcher_round));
         builder.setTicker("");
