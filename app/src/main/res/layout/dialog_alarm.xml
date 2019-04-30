@@ -11,7 +11,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:gravity="center"
-        android:text=" Set minutes"
+        android:text=" Quick alarm (min)"
         android:textSize="@dimen/text_heading"
         android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark"

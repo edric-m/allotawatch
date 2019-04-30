@@ -390,8 +390,8 @@ public class MainActivity extends AppCompatActivity
                     } else {
                         mTimerRunning = false;
                         mHasTasks = false;
-                        taskName.setText("create a new timer");
-                        taskTime.setText("to begin");
+                        taskName.setText("");
+                        taskTime.setText("");
                         //layout.setBackgroundColor(Color.parseColor("#4576c1"));
                         mClearBtn.setVisibility(View.INVISIBLE);
                         mtaskIndex.setVisibility(View.INVISIBLE);
@@ -476,8 +476,8 @@ public class MainActivity extends AppCompatActivity
             } else {
                 mTimerRunning = false;
                 mHasTasks = false;
-                taskName.setText("create a new timer");
-                taskTime.setText("to begin");
+                taskName.setText("");
+                taskTime.setText("");
                 //layout.setBackgroundColor(Color.parseColor("#4576c1"));
                 mClearBtn.setVisibility(View.INVISIBLE);
                 mtaskIndex.setVisibility(View.INVISIBLE);
@@ -750,11 +750,11 @@ public class MainActivity extends AppCompatActivity
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this, "default")
                         //.setSmallIcon(R.drawable.abc)
-                        .setSmallIcon(R.mipmap.ic_launcher_round)
+                        .setSmallIcon(R.drawable.ic_action_name)
                         .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),
-                                R.mipmap.ic_launcher_round))
-                        .setContentTitle("alarm has ended")
-                        .setContentText("do what gotta be done...")
+                                R.mipmap.ic_notification_round))
+                        .setContentTitle("Your quick alarm has ended.")
+                        //.setContentText("")
                         .setLights(Color.WHITE,1,1)
                         .setSound(alarmSound)
                         .setAutoCancel(true)
