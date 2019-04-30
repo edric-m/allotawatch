@@ -52,10 +52,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="140dp"
         android:text="Hours: 0"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@id/guidelinevertical"
-        app:layout_constraintTop_toTopOf="@id/guidelinehorizontal" />
+        app:layout_constraintTop_toTopOf="@id/guidelinehorizontal"
+        app:layout_constraintRight_toLeftOf="@id/guidelineverticalright"/>
 
     <Button
         android:id="@+id/btn_hr_minus"
@@ -91,10 +92,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
-        android:layout_marginLeft="140dp"
         android:text="Mins: 0"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@id/guidelinevertical"
-        app:layout_constraintTop_toTopOf="@id/guidelinehorizontal" />
+        app:layout_constraintTop_toTopOf="@id/guidelinehorizontal"
+        app:layout_constraintRight_toLeftOf="@id/guidelineverticalright"/>
 
     <Button
         android:id="@+id/btn_min_minus"
