@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 public class NewTaskActivity extends AppCompatActivity {
 
-    public static final String NAME_KEY = "U-name"; /*!< String associated with this activities result */
-    public static final String TIME_KEY = "add"; /*!< String associated with this activities result */
+    //public static final String NAME_KEY = "U-name"; /*!< String associated with this activities result */
+    //public static final String TIME_KEY = "add"; /*!< String associated with this activities result */
 
     private EditText name; /*!< User text input for the new tasks name */
     private TextView mTimeLabel, mMinLabel; /*!< Label that shows the user input */
@@ -80,6 +80,8 @@ public class NewTaskActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.btn_cancelNewTask) {
+            hoursSet = 0;
+            minSet = 0; //invalidate creation
             finish();
             return true;
         }
