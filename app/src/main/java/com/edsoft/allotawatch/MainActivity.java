@@ -498,6 +498,7 @@ public class MainActivity extends AppCompatActivity
             switchedTime = switchedTime + 1000;
             if(mTimerRunning) {
                 //selectedTask.decrementTime();
+                selectedTask.incrementTimeSpent();
                 updateCountDownText(false);
                 showTaskInfo();
             }

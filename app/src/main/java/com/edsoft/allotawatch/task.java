@@ -48,9 +48,13 @@ public class task {
     }
 
     public void setTimeAllocated(long newTime) {
-        if(newTime < timeAllocated) {
-            this.timeSpent = timeSpent + (timeAllocated-newTime); //TODO: change reciever code and dont to this here
-        }
+        //if(newTime < timeAllocated) {
+        //    this.timeSpent = timeSpent + (timeAllocated-newTime); //TODO: change reciever code and dont to this here
+        //}
         this.timeAllocated = newTime;
+    }
+
+    public void incrementTimeSpent(){
+        timeSpent = timeSpent + 1000;
     }
 }
