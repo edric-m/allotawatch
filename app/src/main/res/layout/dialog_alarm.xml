@@ -6,11 +6,16 @@
 
     <TextView
         android:id="@+id/textview_alarm_heading"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:text="Set minutes"/>
+        android:gravity="center"
+        android:text=" Set minutes"
+        android:textSize="@dimen/text_heading"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingBottom="10dp"/>
 
     <Button
         android:id="@+id/button_1min"
@@ -66,5 +71,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/button_30min"
         app:layout_constraintLeft_toRightOf="@+id/button_1min"
-        android:text="cancel"/>
+        android:text="cancel"
+        android:textColor="@color/TextColor"
+        android:backgroundTint="@color/colorPrimaryDark"/>
 </android.support.constraint.ConstraintLayout>
