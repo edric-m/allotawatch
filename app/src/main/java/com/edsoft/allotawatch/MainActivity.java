@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
     private ConstraintLayout layout; /*!< Needed to set the background colour of the activity */
     private ImageView mImageView; /*!< Controls the background image */
     private Button mClearBtn;//, mAlarmBtn, mStartBtn;
-    private Menu menu;
+    //private Menu menu;
     //private MenuItem mAlarmBtn;
     private boolean alarmBtnVisible, playBtnVisable;
 
@@ -676,6 +676,7 @@ public class MainActivity extends AppCompatActivity
         mtaskIndex.append("\n\nTime since last break: " + formatMsToTime(switchedTime));
         //mtaskIndex.append("\nTotal time spent this session: " + formatMsToTime(list.getList().get(index-1).getTimeSpent()));
         mtaskIndex.append("\nTime left for all tasks: " + formatMsToTime(list.getTotalMs()));
+        mtaskIndex.append("\nTotal time spent: " + formatMsToTime(selectedTask.getTimeSpent()));
     }
 
     public void switchTask(Direction direction) {
@@ -692,8 +693,8 @@ public class MainActivity extends AppCompatActivity
                 default:
             }
             toggleTimer();
-            Toast toast = Toast.makeText(getApplicationContext(), "Starting "+selectedTask.getName(), Toast.LENGTH_SHORT);
-            toast.show();
+            //Toast toast = Toast.makeText(getApplicationContext(), "Starting "+selectedTask.getName(), Toast.LENGTH_SHORT);
+            //toast.show();
             refreshDisplay(false);
         }
     }

@@ -333,8 +333,8 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
             taskList.addTask(
                     res.getString(res.getColumnIndex(DbContract.FeedEntry.TASK_COLUMN_NAME)),
                     res.getInt(res.getColumnIndex(DbContract.FeedEntry.TASK_COLUMN_TIME_REMAINING)),
-                    //res.getInt(res.getColumnIndex(DbContract.FeedEntry.TASK_COLUMN_TIME_SPENT))
-                    0
+                    res.getInt(res.getColumnIndex(DbContract.FeedEntry.TASK_COLUMN_TIME_SPENT))
+                    //0
             );
             res.moveToNext();
         }
