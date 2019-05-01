@@ -172,7 +172,7 @@ public class NewTaskActivity extends AppCompatActivity {
      */
     public void submitEntry() {
         if(name.getText().toString().equals("rename")) {
-            newTaskName = "Alarm ";
+            newTaskName = "Alarm";
         } else {
             newTaskName = name.getText().toString();
         }
@@ -181,12 +181,13 @@ public class NewTaskActivity extends AppCompatActivity {
         if(db.readTask(newTaskName)>0)
         {
             //delete task from group if its there
-            db.deleteTaskFromGroup(newTaskName, planSet);
-            //add task to group table
-            long x = (hoursSet * 60) + minSet;
-            db.addToGroup(newTaskName, x*MS_IN_1MIN, planSet);
-            db.updateTask(newTaskName, x*MS_IN_1MIN);
-            //invalidate new entry //TODO there is a cleaner way to do this
+            if(db.deleteTaskFromGroup(newTaskName, planSet)) {
+                //add task to group table
+                long x = (hoursSet * 60) + minSet;
+                db.addToGroup(newTaskName, x * MS_IN_1MIN, planSet);
+                db.updateTask(newTaskName, x * MS_IN_1MIN);
+                //invalidate new entry //TODO there is a cleaner way to do this
+            }
             hoursSet = 0;
             minSet = 0; //this invalidates the creation of a task
         }

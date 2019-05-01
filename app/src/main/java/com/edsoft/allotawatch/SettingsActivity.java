@@ -226,7 +226,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
                 newPlan();
                 break;
             case R.id.btn_savePlan:
-                loadPlan(); //TODO confusing name
+                showSaveDialog(); //TODO confusing name
                 break;
             case R.id.btn_loadPlan:
                 loadPlanToMain();
@@ -252,7 +252,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
     }
     */
 
-    private void loadPlan() {
+    private void showSaveDialog() {
         //create fragment
         DialogPlan dialog = new DialogPlan();
         dialog.show(getSupportFragmentManager(), "DialogPlan");
@@ -423,7 +423,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
             setResult(RESULT_OK, data);
         }
         else {
-            setResult(RESULT_CANCELED, data);
+            setResult(RESULT_OK, data);
         }
         super.finish();
     }

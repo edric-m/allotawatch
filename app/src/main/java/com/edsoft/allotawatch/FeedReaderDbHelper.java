@@ -195,10 +195,12 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         //Log.d("SavePlan", "returned from query:" + Integer.toString(res.getCount()));
         res.moveToFirst();
         while(!res.isAfterLast()){
-            db.delete(DbContract.FeedEntry.TASK_TABLE_NAME,
-                    DbContract.FeedEntry._ID +
-                            "=" + Integer.toString(res.getInt(res.getColumnIndex(DbContract.FeedEntry._ID))),
-                    null);
+            if(planID != 0) {
+                db.delete(DbContract.FeedEntry.TASK_TABLE_NAME,
+                        DbContract.FeedEntry._ID +
+                                "=" + Integer.toString(res.getInt(res.getColumnIndex(DbContract.FeedEntry._ID))),
+                        null);
+            }
             res.moveToNext();
         }
         //delete the plan from the plan table
