@@ -181,13 +181,13 @@ public class NewTaskActivity extends AppCompatActivity {
         if(db.readTask(newTaskName)>0)
         {
             //delete task from group if its there
-            if(db.deleteTaskFromGroup(newTaskName, planSet)) {
-                //add task to group table
-                long x = (hoursSet * 60) + minSet;
-                db.addToGroup(newTaskName, x * MS_IN_1MIN, planSet);
-                db.updateTask(newTaskName, x * MS_IN_1MIN);
-                //invalidate new entry //TODO there is a cleaner way to do this
-            }
+            //db.deleteTaskFromGroup(newTaskName, planSet);
+            //add task to group table
+            long x = (hoursSet * 60) + minSet;
+            db.addToGroup(newTaskName, x * MS_IN_1MIN, planSet);
+            db.updateTask(newTaskName, x * MS_IN_1MIN);
+            //invalidate new entry //TODO there is a cleaner way to do this
+
             hoursSet = 0;
             minSet = 0; //this invalidates the creation of a task
         }
@@ -205,7 +205,7 @@ public class NewTaskActivity extends AppCompatActivity {
         Intent data = new Intent();
         int x = (hoursSet * 60) + minSet;
         if(x <= 0) {
-            setResult(RESULT_CANCELED, data);
+            setResult(RESULT_OK, data);
             //TODO notify user that creation failed
         }
         else {

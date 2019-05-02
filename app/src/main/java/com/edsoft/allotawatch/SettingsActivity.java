@@ -181,10 +181,14 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
             totalMsLoaded += (int)i.getLongExtra("itemValue"+Integer.toString(x),0);
         }
 
-        plan = (totalMsLoaded/(mintoms*10));
-        mTimeText.setText(" "+new DecimalFormat("#.#").format(plan*0.16666)+" hrs       work per day");
-        initRecyclerView(totalMsLoaded);
-        changesMade = true;
+        if(taskList.size()>0) {
+            plan = (totalMsLoaded / (mintoms * 10));
+            mTimeText.setText(" " + new DecimalFormat("#.#").format(plan * 0.16666) + " hrs       work per day");
+            initRecyclerView(totalMsLoaded);
+            changesMade = true;
+        } else {
+            switchPlan();
+        }
 
         //RecyclerViewAdapter.ViewHolder item = (RecyclerViewAdapter.ViewHolder)recyclerView.findViewHolderForAdapterPosition(1);
         //item.itemValue.setText("poo hrs");
@@ -453,16 +457,23 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
 
     public void removeTask(String name, int idx) {
         FeedReaderDbHelper db = new FeedReaderDbHelper(this); //dont delete these two lines
+        //db.deleteTask(name);
         db.deleteTaskFromGroup(name, selectedPlan-1);
+
         taskList.getList().remove(idx);
         //selectedPlan--;
         //switchPlan();
         count = taskList.size();
-        changesMade = true;
-        plan = (taskList.getTotalMs()/(mintoms*10));
-        mTimeText.setText(" "+new DecimalFormat("#.#").format(plan*0.16666)+" hrs       work per day");
-        initRecyclerView(taskList.getTotalMs());
-        Log.d("deletetaskfromsettings", "delete " + name);
+        if(count > 0) {
+            changesMade = true;
+            plan = (taskList.getTotalMs() / (mintoms * 10));
+            mTimeText.setText(" " + new DecimalFormat("#.#").format(plan * 0.16666) + " hrs       work per day");
+            initRecyclerView(taskList.getTotalMs());
+            Log.d("deletetaskfromsettings", "delete " + name);
+        } else {
+            //finish();
+            switchPlan();
+        }
     }
 
     public void switchPlan() {
@@ -474,24 +485,39 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
         //load tasklist with those from next plan
         try {
             FeedReaderDbHelper db = new FeedReaderDbHelper(this);
+            int ctr = 0;
+            boolean finish = false;
             do {
                 taskList.clear();
                 taskList = db.readPlan(selectedPlan);
                 if(selectedPlan == 0) {
-                    mPlanText.setText("Current Plan");
+                    mPlanText.setText("List in use");
                 } else {
                     mPlanText.setText("List: " + Integer.toString(selectedPlan));
                 }
                 selectedPlan++;
+                ctr++;
                 if(selectedPlan > 5) {
                     selectedPlan = 0;
                 }
-            } while (taskList.size() == 0); //could have endless loop here?
+                if (ctr > 5) {
+                    //end
+                    finish = true;
+                }
+                if (taskList.size() > 0) {
+                    //end
+                    finish = true;
+                }
+            } while (!finish); //could have endless loop here?
             count = taskList.size();
-            changesMade = true;
-            plan = (taskList.getTotalMs()/(mintoms*10));
-            mTimeText.setText(" "+new DecimalFormat("#.#").format(plan*0.16666)+" hrs       work per day");
-            initRecyclerView(taskList.getTotalMs());
+            if (count > 0) {
+                changesMade = true;
+                plan = (taskList.getTotalMs() / (mintoms * 10));
+                mTimeText.setText(" " + new DecimalFormat("#.#").format(plan * 0.16666) + " hrs       work per day");
+                initRecyclerView(taskList.getTotalMs());
+            } else {
+                finish();
+            }
         } catch (Exception e) {
             Log.d("SwitchPlan", "error in readPlan()");
         }

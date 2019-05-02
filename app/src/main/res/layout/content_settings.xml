@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:gravity="center"
-        android:text="Current Plan"
+        android:text="List in use"
         android:textStyle="bold"
         android:textSize="15dp"
         android:layout_alignParentTop="true"

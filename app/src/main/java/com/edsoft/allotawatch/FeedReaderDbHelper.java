@@ -79,6 +79,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
         int taskid = readTask(name, db); //TODO: just use inner join here
 
+
         /*
         String query = "SELECT " + DbContract.FeedEntry.TASK_COLUMN_TIME_REMAINING +
                 " FROM "+ DbContract.FeedEntry.TASK_TABLE_NAME +
@@ -94,6 +95,12 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         if(taskid == -1) {
             return false;
         } else {
+            //delete the task from the group first
+            db.delete(DbContract.TaskGroupEntry.GROUP_TABLE_NAME,
+                    DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_ID + "='" + Integer.toString(taskid)
+                            + "' AND " + DbContract.TaskGroupEntry.GROUP_COLUMN_PLAN_ID + "='" + Integer.toString(plan) + "'",
+                    null);
+
             ContentValues contentValues = new ContentValues();
             contentValues.put(DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_ID, taskid);
             contentValues.put(DbContract.TaskGroupEntry.GROUP_COLUMN_PLAN_ID, plan);
@@ -170,10 +177,41 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                 "WHERE " + DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_ID +
                 "=" + Integer.toString(id);
         Cursor res = db.rawQuery(query, null);*/
-        return db.delete(DbContract.TaskGroupEntry.GROUP_TABLE_NAME,
+        if(db.delete(DbContract.TaskGroupEntry.GROUP_TABLE_NAME,
                 DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_ID + "='" + Integer.toString(id)
                         + "' AND " + DbContract.TaskGroupEntry.GROUP_COLUMN_PLAN_ID + "='" + Integer.toString(planid) + "'",
-                null) > 0;
+                null)>0) {
+
+            String selection = DbContract.FeedEntry.TASK_COLUMN_NAME + " LIKE ?";
+            // Specify arguments in placeholder order.
+            String[] selectionArgs = {name};
+            //String id = Integer.toString(readTask(name, db));
+            //select planid from group inner join task on taskid = group.taskid where taskname = _name
+            String query = "SELECT " + DbContract.TaskGroupEntry.GROUP_COLUMN_PLAN_ID + " FROM " +
+                    DbContract.TaskGroupEntry.GROUP_TABLE_NAME + "[INNER] JOIN " +
+                    DbContract.FeedEntry.TASK_TABLE_NAME + " ON " +
+                    DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_ID + " = " +
+                    DbContract.FeedEntry._ID + " WHERE " +
+                    DbContract.FeedEntry.TASK_COLUMN_NAME + " = '" +
+                    name + "'";
+            Cursor res = db.rawQuery(query, null);
+            //only delete the task if it is not part of any plan
+            if (res.getCount() <= 0) {
+                // Issue SQL statement.
+                int deletedRows = db.delete(DbContract.FeedEntry.TASK_TABLE_NAME, selection, selectionArgs);
+                db.delete(DbContract.TaskGroupEntry.GROUP_TABLE_NAME,
+                        DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_ID + "=" + id,
+                        null);
+                db.execSQL("vacuum");
+                if (deletedRows != 0) {
+                    return false;
+                } else {
+
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public void deletePlan(int planID) {
@@ -277,7 +315,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                 name + "'";
         Cursor res = db.rawQuery(query, null);
         //only delete the task if it is not part of any plan
-        if(res.getCount() == 1) {
+        if(res.getCount() <= 1) {
             // Issue SQL statement.
             int deletedRows = db.delete(DbContract.FeedEntry.TASK_TABLE_NAME, selection, selectionArgs);
             db.delete(DbContract.TaskGroupEntry.GROUP_TABLE_NAME,

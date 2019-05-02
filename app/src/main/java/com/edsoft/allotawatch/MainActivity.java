@@ -266,6 +266,7 @@ public class MainActivity extends AppCompatActivity
             invalidateOptionsMenu();
             //mAlarmBtn.setEnabled(false);
             //mAlarmBtn.setVisible(false);
+            mTimerRunning = true;
         } else {
             //do something else
         }
@@ -334,7 +335,7 @@ public class MainActivity extends AppCompatActivity
                 if (initialY > finalY && Math.abs(finalX - initialX) < Math.abs(initialY - finalY)) {
                     //Log.d(TAG, "Down to Up swipe performed");
                     //if(mHasTasks)
-                    if(mTimerRunning || !mHasTasks) {  //TODO double check this
+                    if(mTimerRunning) {  //TODO double check this
                         switchedTime = 0; //TODO: not good to do this here
                         openSettings();
                     } else {
@@ -371,7 +372,7 @@ public class MainActivity extends AppCompatActivity
                 case 1:
                     if(readDb()) {
                         selectedTask = list.selectNewTask(); //TODO: will this work?
-                        //mTimerRunning = true;
+                        mTimerRunning = true;
                         mHasTasks = true;
                         breakRecommend = ((list.getTotalMs() / 3600000) * 600000);
                         refreshDisplay(false);
@@ -388,7 +389,7 @@ public class MainActivity extends AppCompatActivity
                         timePaused = 0;
 
                     } else {
-                        mTimerRunning = false;
+                        mTimerRunning = true;
                         mHasTasks = false;
                         taskName.setText("");
                         taskTime.setText("");
@@ -460,6 +461,7 @@ public class MainActivity extends AppCompatActivity
     private void deleteTask() {
         if(mTimerRunning) {
             FeedReaderDbHelper db = new FeedReaderDbHelper(this);
+            db.updateAllTasks(list.getList());
             db.deleteTask(selectedTask.getName());
             //list.moveToNextTask();
             list.removeTask(selectedTask);
@@ -474,7 +476,7 @@ public class MainActivity extends AppCompatActivity
                 switchedTime = 0;
                 refreshDisplay(false);
             } else {
-                mTimerRunning = false;
+                mTimerRunning = true;
                 mHasTasks = false;
                 taskName.setText("");
                 taskTime.setText("");
@@ -681,7 +683,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void switchTask(Direction direction) {
-        if(mTimerRunning) {
+        if(mTimerRunning && mHasTasks) {
             toggleTimer();
             //switchedTime = 0;
             switch (direction) {
