@@ -480,7 +480,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
                 if(selectedPlan == 0) {
                     mPlanText.setText("Current Plan");
                 } else {
-                    mPlanText.setText("Plan: " + Integer.toString(selectedPlan));
+                    mPlanText.setText("List: " + Integer.toString(selectedPlan));
                 }
                 selectedPlan++;
                 if(selectedPlan > 5) {
