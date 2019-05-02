@@ -355,9 +355,11 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues(), newtask = new ContentValues();
         boolean result = true;
         int rowsAffected = 0;
+        task selectedTask;
 
-        task selectedTask = taskList.get(0);
+        //task selectedTask = taskList.get(0);
         for(int x=0;x<taskList.size();x++) {
+            selectedTask = taskList.get(x);
             //try {
             //contentValues.put(DbContract.FeedEntry.TASK_COLUMN_NAME, selectedTask.getName());
             contentValues.put(DbContract.FeedEntry.TASK_COLUMN_TIME_REMAINING, selectedTask.getTimeAllocated());
@@ -383,7 +385,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
             //task name not found probably
             //result = false;
             //} finally {
-            selectedTask = taskList.get(x);
+
             contentValues.clear();
             //}
         }
