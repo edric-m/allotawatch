@@ -194,6 +194,12 @@ public class NewTaskActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
     /**
      * @Brief: When the task is confirmed it calculates the time to send back to the MainActivity
      * as well as the name to give the task. It checks that the values were changed from 0,

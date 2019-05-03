@@ -245,6 +245,12 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
     private void addNewTask() {
         Intent i = new Intent(this, NewTaskActivity.class);
         i.putExtra("plan", selectedPlan-1); //TODO selectedPlan variable name is confusing
