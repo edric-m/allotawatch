@@ -197,7 +197,9 @@ public class NewTaskActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
+        hoursSet = 0;
+        minSet = 0; //this invalidates the creation of a task
+        finish(); //TODO causes task to be created twice?
     }
 
     /**
