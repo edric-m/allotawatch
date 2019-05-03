@@ -7,19 +7,19 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_camera"
+                    android:id="@+id/nav_about"
                     android:icon="@drawable/ic_local_library_black_24dp"
                     android:title="About" />
                 <item
-                    android:id="@+id/nav_gallery"
+                    android:id="@+id/nav_get_started"
                     android:icon="@drawable/ic_menu_slideshow"
                     android:title="Get Started" />
                 <item
-                    android:id="@+id/nav_slideshow"
+                    android:id="@+id/nav_actions"
                     android:icon="@drawable/ic_info_black_24dp"
                     android:title="Actions" />
                 <item
-                    android:id="@+id/nav_manage"
+                    android:id="@+id/nav_usage"
                     android:icon="@drawable/ic_info_outline_black_24dp"
                     android:title="Usage" />
             </group>
@@ -43,11 +43,11 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_contact"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Contact" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_report_bugs"
                 android:icon="@drawable/ic_bug_report_black_24dp"
                 android:title="Report Bugs" />
         </menu>
