@@ -110,11 +110,9 @@ public class ActivityInfo extends AppCompatActivity {
             int section = getArguments().getInt(ARG_SECTION_NUMBER);
             switch(section) {
                 case 1:
-                    textView.setText("About");
-                    break;
+                    return CreateAboutPage(inflater, container);
                 case 2:
-                    textView.setText("Get Started");
-                    break;
+                    return CreateGetStartedPage(inflater, container);
                 case 3:
                     textView.setText("Actions pg.1");
                     break;
@@ -137,6 +135,20 @@ public class ActivityInfo extends AppCompatActivity {
                     break;
             }
             //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            return rootView;
+        }
+
+        private View CreateGetStartedPage(LayoutInflater inflater, ViewGroup container) {
+            View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText("Get Started");
+            return rootView;
+        }
+
+        private View CreateAboutPage(LayoutInflater inflater, ViewGroup container) {
+            View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            textView.setText("About");
             return rootView;
         }
     }

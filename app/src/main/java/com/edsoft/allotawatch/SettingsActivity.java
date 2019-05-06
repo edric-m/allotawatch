@@ -246,8 +246,8 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onDestroy() {
+        super.onDestroy();
         finish();
     }
 
