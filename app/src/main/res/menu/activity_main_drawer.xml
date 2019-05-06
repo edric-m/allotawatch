@@ -19,9 +19,9 @@
                     android:icon="@drawable/ic_info_black_24dp"
                     android:title="Actions" />
                 <item
-                    android:id="@+id/nav_usage"
-                    android:icon="@drawable/ic_info_outline_black_24dp"
-                    android:title="Usage" />
+                    android:id="@+id/nav_budget"
+                    android:icon="@drawable/ic_equalizer_black_24dp"
+                    android:title="Budgeting Time" />
             </group>
         </menu>
     </item>

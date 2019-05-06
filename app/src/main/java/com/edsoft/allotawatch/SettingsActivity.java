@@ -443,6 +443,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
         Log.d("SavePlan", "write started");
         FeedReaderDbHelper db = new FeedReaderDbHelper(this);
         db.deletePlan(planNum);
+        db.updateAllTasks(taskList.getList(), planNum);
         for(int x=0;x<count;x++){
             if(!db.addToGroup(taskList.getList().get(x).getName(), taskList.getList().get(x).getTimeAllocated(), planNum))
                 Log.d("SavePlan", "write to group db failed");
@@ -456,7 +457,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
         //db.deletePlan(0);
         //save tasks to 0 plan
         savePlan(0);
-        db.updateAllTasks(taskList.getList());
+        db.updateAllTasks(taskList.getList(), 0);
         //close settingsActivity
         finish();
     }

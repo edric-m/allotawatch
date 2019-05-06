@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_actions) {
 
-        } else if (id == R.id.nav_usage) {
+        } else if (id == R.id.nav_budget) {
 
         } else if (id == R.id.nav_contact) {
 
@@ -453,7 +453,7 @@ public class MainActivity extends AppCompatActivity
         try {
             FeedReaderDbHelper db = new FeedReaderDbHelper(this);
             if(list.size() > 0)
-                db.updateAllTasks(list.getList());
+                db.updateAllTasks(list.getList(), 0);
         } catch (Exception e) {
             Log.d("MyActivity", e.getMessage());
         }
@@ -462,7 +462,7 @@ public class MainActivity extends AppCompatActivity
     private void deleteTask() {
         if(mTimerRunning) {
             FeedReaderDbHelper db = new FeedReaderDbHelper(this);
-            db.updateAllTasks(list.getList());
+            db.updateAllTasks(list.getList(), 0);
             db.deleteTask(selectedTask.getName());
             //list.moveToNextTask();
             list.removeTask(selectedTask);

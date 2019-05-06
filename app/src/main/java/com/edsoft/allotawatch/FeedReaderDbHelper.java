@@ -388,12 +388,15 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
      * @param taskList
      * @return
      */
-    public boolean updateAllTasks(LinkedList<task> taskList) { //TODO update all tasks where plan = 0
+    public boolean updateAllTasks(LinkedList<task> taskList, int planNum) { //TODO update all tasks where plan = x
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues(), newtask = new ContentValues();
         boolean result = true;
         int rowsAffected = 0;
         task selectedTask;
+        if (planNum < 0 || planNum > 5) {
+            planNum = 0;
+        }
 
         //task selectedTask = taskList.get(0);
         for(int x=0;x<taskList.size();x++) {
@@ -414,7 +417,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                 long id = db.insert(DbContract.FeedEntry.TASK_TABLE_NAME, null, contentValues);
                 //TODO: insert task into group table plan 0 also
                 newtask.put(DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_ID, (int)id); //TODO: casting may cause future error if id is larger than integer.MAX_VALUE
-                newtask.put(DbContract.TaskGroupEntry.GROUP_COLUMN_PLAN_ID,0);
+                newtask.put(DbContract.TaskGroupEntry.GROUP_COLUMN_PLAN_ID,planNum);
                 newtask.put(DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_TIME, (int)selectedTask.getTimeAllocated());
                 db.insert(DbContract.TaskGroupEntry.GROUP_TABLE_NAME, null, newtask);
             }

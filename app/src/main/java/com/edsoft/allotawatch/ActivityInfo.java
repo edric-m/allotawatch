@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ActivityInfo extends AppCompatActivity {
@@ -49,15 +50,6 @@ public class ActivityInfo extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
     }
 
@@ -114,7 +106,37 @@ public class ActivityInfo extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            ImageView imageView = (ImageView) rootView.findViewById(R.id.section_image);
+            int section = getArguments().getInt(ARG_SECTION_NUMBER);
+            switch(section) {
+                case 1:
+                    textView.setText("About");
+                    break;
+                case 2:
+                    textView.setText("Get Started");
+                    break;
+                case 3:
+                    textView.setText("Actions pg.1");
+                    break;
+                case 4:
+                    textView.setText("Actions pg.2");
+                    break;
+                case 5:
+                    textView.setText("Budgeting Time pg.1");
+                    break;
+                case 6:
+                    textView.setText("Budgeting Time pg.2");
+                    break;
+                case 7:
+                    textView.setText("Contact");
+                    break;
+                case 8:
+                    textView.setText("Report Bugs");
+                    break;
+                default:
+                    break;
+            }
+            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }
@@ -139,7 +161,7 @@ public class ActivityInfo extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 8;
         }
     }
 }
