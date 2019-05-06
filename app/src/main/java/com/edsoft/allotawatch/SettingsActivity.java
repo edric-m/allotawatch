@@ -504,7 +504,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
                 }
                 selectedPlan++;
                 ctr++;
-                if(selectedPlan > 5) {
+                if(selectedPlan > 6) {
                     selectedPlan = 0;
                 }
                 if (ctr > 5) {
