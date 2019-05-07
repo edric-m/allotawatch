@@ -123,7 +123,7 @@ public class BroadcastService extends Service {
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this, "default")
                         //.setSmallIcon(R.drawable.abc)
-                        .setSmallIcon(R.mipmap.ic_launcher_round)
+                        .setSmallIcon(R.drawable.ic_action_name)
                         .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),
                                 R.mipmap.ic_launcher_round))
                         .setContentTitle("10 mins break elapsed")

@@ -161,42 +161,44 @@ public class ActivityInfo extends AppCompatActivity {
 
         private View CreateActionsPage(View rootView) {
             TextView p1 = (TextView) rootView.findViewById(R.id.section_label1);
-            p1.setText(getString(R.string.section_content_getstarted_p1));
+            p1.setText(getString(R.string.section_content_actions_p1));
             TextView p2 = (TextView) rootView.findViewById(R.id.section_label2);
-            p2.setText((getString(R.string.section_content_getstarted_p2)));
+            p2.setText((getString(R.string.section_content_actions_p2)));
             TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
-            p3.setText((getString(R.string.section_content_getstarted_p3)));
+            p3.setText((getString(R.string.section_content_actions_p3)));
             TextView p4 = (TextView) rootView.findViewById(R.id.section_label4);
-            p4.setText((getString(R.string.section_content_getstarted_p4)));
+            p4.setText((getString(R.string.section_content_actions_p4)));
             TextView p5 = (TextView) rootView.findViewById(R.id.section_label5);
-            p5.setText((getString(R.string.section_content_getstarted_p5)));
+            p5.setText((getString(R.string.section_content_actions_p5)));
             TextView p6 = (TextView) rootView.findViewById(R.id.section_label6);
-            p6.setText((getString(R.string.section_content_getstarted_p6)));
+            p6.setText((getString(R.string.section_content_actions_p6)));
             TextView p7 = (TextView) rootView.findViewById(R.id.section_label7);
-            p7.setText((getString(R.string.section_content_getstarted_p7)));
+            p7.setText((getString(R.string.section_content_actions_p7)));
             TextView p8 = (TextView) rootView.findViewById(R.id.section_label8);
-            p8.setText((getString(R.string.section_content_getstarted_p8)));
+            p8.setText((getString(R.string.section_content_actions_p8)));
+            TextView p9 = (TextView) rootView.findViewById(R.id.section_label9);
+            p9.setText((getString(R.string.section_content_actions_p9)));
             return rootView;
         }
 
         private View CreateBudgetingPage(View rootView) {
             //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
-            textView.setText("Budgeting Time");
+            textView.setText(getString(R.string.section_content_budget));
             return rootView;
         }
 
         private View CreateContactPage(View rootView) {
             //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
-            textView.setText("Contact");
+            textView.setText(getString(R.string.section_content_contact));
             return rootView;
         }
 
         private View CreateBugReportPage(View rootView) {
             //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
-            textView.setText("Bug Report");
+            textView.setText(getString(R.string.section_content_bugs));
             return rootView;
         }
     }

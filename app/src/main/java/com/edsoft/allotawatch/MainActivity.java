@@ -201,13 +201,21 @@ public class MainActivity extends AppCompatActivity
             i.putExtra(ActivityInfo.ARG_SECTION, 1);
             startActivity(i);
         } else if (id == R.id.nav_actions) {
-
+            Intent i = new Intent(this, ActivityInfo.class);
+            i.putExtra(ActivityInfo.ARG_SECTION, 2);
+            startActivity(i);
         } else if (id == R.id.nav_budget) {
-
+            Intent i = new Intent(this, ActivityInfo.class);
+            i.putExtra(ActivityInfo.ARG_SECTION, 3);
+            startActivity(i);
         } else if (id == R.id.nav_contact) {
-
+            Intent i = new Intent(this, ActivityInfo.class);
+            i.putExtra(ActivityInfo.ARG_SECTION, 4);
+            startActivity(i);
         } else if (id == R.id.nav_report_bugs) {
-
+            Intent i = new Intent(this, ActivityInfo.class);
+            i.putExtra(ActivityInfo.ARG_SECTION, 5);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
