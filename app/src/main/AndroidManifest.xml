@@ -14,7 +14,8 @@
         <activity
             android:name=".ActivityInfo"
             android:label="@string/title_activity_info"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity
             android:name=".MainActivity"
             android:label=""

@@ -116,22 +116,42 @@
         For example.\n
         If I\n
     </string>
-    <string name="section_content_contact">
+    <string name="section_content_contact_p1">
         Contact\n\n
-        edsoft@gmail.com\n\n\n
-        message\n\n\n
-        your contact email
+        edsoft@gmail.com\n
     </string>
-    <string name="section_content_bugs">
+    <string name="section_content_contact_p2">
+        message\n
+    </string>
+    <string name="section_content_contact_p3">
+        your contact email\n
+    </string>
+    <string name="section_content_bugs_p1">
         Report bugs\n\n
-        edsoft@gmail.com\n\n\n
-        feature name\n\n\n
-        environment\n\n\n
-        steps to reproduce\n\n\n
-        expected result\n\n\n
-        actual result\n\n\n
-        visual proof (screenshots, videos)\n\n\n
-        additional notes\n\n\n
-        your contact email
+        edsoft@gmail.com\n
+    </string>
+    <string name="section_content_bugs_p2">
+        feature name\n
+    </string>
+    <string name="section_content_bugs_p3">
+        environment\n
+    </string>
+    <string name="section_content_bugs_p4">
+        steps to reproduce\n
+    </string>
+    <string name="section_content_bugs_p5">
+        expected result\n
+    </string>
+    <string name="section_content_bugs_p6">
+        actual result\n
+    </string>
+    <string name="section_content_bugs_p7">
+        visual proof (screenshots, videos)\n
+    </string>
+    <string name="section_content_bugs_p8">
+        additional notes\n
+    </string>
+    <string name="section_content_bugs_p9">
+        your contact email\n
     </string>
 </resources>

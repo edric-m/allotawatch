@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -121,9 +122,9 @@ public class ActivityInfo extends AppCompatActivity {
                 case 4:
                     return CreateBudgetingPage(rootView);
                 case 5:
-                    return CreateContactPage(rootView);
+                    return CreateContactPage(inflater, container);
                 case 6:
-                    return CreateBugReportPage(rootView);
+                    return CreateBugReportPage(inflater, container);
                 default:
                     break;
             }
@@ -188,17 +189,59 @@ public class ActivityInfo extends AppCompatActivity {
             return rootView;
         }
 
-        private View CreateContactPage(View rootView) {
-            //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
-            textView.setText(getString(R.string.section_content_contact));
+        private View CreateContactPage(LayoutInflater inflater, ViewGroup container) {
+            View rootView = inflater.inflate(R.layout.fragment_activity_contact, container, false);
+            EditText editText;
+            TextView p1 = (TextView) rootView.findViewById(R.id.section_label1);
+            p1.setText(getString(R.string.section_content_contact_p1));
+            TextView p2 = (TextView) rootView.findViewById(R.id.section_label2);
+            p2.setText((getString(R.string.section_content_contact_p2)));
+            editText = (EditText) rootView.findViewById(R.id.section_input2);
+            editText.setVisibility(View.VISIBLE);
+            TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
+            p3.setText((getString(R.string.section_content_contact_p3)));
+            editText = (EditText) rootView.findViewById(R.id.section_input3);
+            editText.setVisibility(View.VISIBLE);
             return rootView;
         }
 
-        private View CreateBugReportPage(View rootView) {
-            //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
-            textView.setText(getString(R.string.section_content_bugs));
+        private View CreateBugReportPage(LayoutInflater inflater, ViewGroup container) {
+            View rootView = inflater.inflate(R.layout.fragment_activity_contact, container, false);
+            EditText editText;
+            TextView p1 = (TextView) rootView.findViewById(R.id.section_label1);
+            p1.setText(getString(R.string.section_content_bugs_p1));
+            TextView p2 = (TextView) rootView.findViewById(R.id.section_label2);
+            p2.setText((getString(R.string.section_content_bugs_p2)));
+            editText = (EditText) rootView.findViewById(R.id.section_input2);
+            editText.setVisibility(View.VISIBLE);
+            TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
+            p3.setText((getString(R.string.section_content_bugs_p3)));
+            editText = (EditText) rootView.findViewById(R.id.section_input3);
+            editText.setVisibility(View.VISIBLE);
+            TextView p4 = (TextView) rootView.findViewById(R.id.section_label4);
+            p4.setText((getString(R.string.section_content_bugs_p4)));
+            editText = (EditText) rootView.findViewById(R.id.section_input4);
+            editText.setVisibility(View.VISIBLE);
+            TextView p5 = (TextView) rootView.findViewById(R.id.section_label5);
+            p5.setText((getString(R.string.section_content_bugs_p5)));
+            editText = (EditText) rootView.findViewById(R.id.section_input5);
+            editText.setVisibility(View.VISIBLE);
+            TextView p6 = (TextView) rootView.findViewById(R.id.section_label6);
+            p6.setText((getString(R.string.section_content_bugs_p6)));
+            editText = (EditText) rootView.findViewById(R.id.section_input6);
+            editText.setVisibility(View.VISIBLE);
+            TextView p7 = (TextView) rootView.findViewById(R.id.section_label7);
+            p7.setText((getString(R.string.section_content_bugs_p7)));
+            editText = (EditText) rootView.findViewById(R.id.section_input7);
+            editText.setVisibility(View.VISIBLE);
+            TextView p8 = (TextView) rootView.findViewById(R.id.section_label8);
+            p8.setText((getString(R.string.section_content_bugs_p8)));
+            editText = (EditText) rootView.findViewById(R.id.section_input8);
+            editText.setVisibility(View.VISIBLE);
+            TextView p9 = (TextView) rootView.findViewById(R.id.section_label9);
+            p9.setText((getString(R.string.section_content_bugs_p9)));
+            editText = (EditText) rootView.findViewById(R.id.section_input9);
+            editText.setVisibility(View.VISIBLE);
             return rootView;
         }
     }
