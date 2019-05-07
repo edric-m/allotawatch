@@ -30,6 +30,7 @@ public class ActivityInfo extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    public static final String ARG_SECTION = "section";
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -50,6 +51,7 @@ public class ActivityInfo extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setCurrentItem(getIntent().getIntExtra(ARG_SECTION, 0));
 
     }
 
@@ -69,7 +71,8 @@ public class ActivityInfo extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_info_cancel) {
+            finish();
             return true;
         }
 
@@ -105,32 +108,22 @@ public class ActivityInfo extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            ImageView imageView = (ImageView) rootView.findViewById(R.id.section_image);
+            //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+            //ImageView imageView = (ImageView) rootView.findViewById(R.id.section_image);
             int section = getArguments().getInt(ARG_SECTION_NUMBER);
             switch(section) {
                 case 1:
-                    return CreateAboutPage(inflater, container);
+                    return CreateAboutPage(rootView);
                 case 2:
-                    return CreateGetStartedPage(inflater, container);
+                    return CreateGetStartedPage(rootView);
                 case 3:
-                    textView.setText("Actions pg.1");
-                    break;
+                    return CreateActionsPage(rootView);
                 case 4:
-                    textView.setText("Actions pg.2");
-                    break;
+                    return CreateBudgetingPage(rootView);
                 case 5:
-                    textView.setText("Budgeting Time pg.1");
-                    break;
+                    return CreateContactPage(rootView);
                 case 6:
-                    textView.setText("Budgeting Time pg.2");
-                    break;
-                case 7:
-                    textView.setText("Contact");
-                    break;
-                case 8:
-                    textView.setText("Report Bugs");
-                    break;
+                    return CreateBugReportPage(rootView);
                 default:
                     break;
             }
@@ -138,17 +131,72 @@ public class ActivityInfo extends AppCompatActivity {
             return rootView;
         }
 
-        private View CreateGetStartedPage(LayoutInflater inflater, ViewGroup container) {
-            View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText("Get Started");
+        private View CreateAboutPage(View rootView) {
+            //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
+            textView.setText(getString(R.string.section_content_about));
             return rootView;
         }
 
-        private View CreateAboutPage(LayoutInflater inflater, ViewGroup container) {
-            View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText("About");
+        private View CreateGetStartedPage(View rootView) {
+            //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
+            TextView p1 = (TextView) rootView.findViewById(R.id.section_label1);
+            p1.setText(getString(R.string.section_content_getstarted_p1));
+            TextView p2 = (TextView) rootView.findViewById(R.id.section_label2);
+            p2.setText(getString(R.string.section_content_getstarted_p2));
+            TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
+            p3.setText(getString(R.string.section_content_getstarted_p3));
+            TextView p4 = (TextView) rootView.findViewById(R.id.section_label4);
+            p4.setText(getString(R.string.section_content_getstarted_p4));
+            TextView p5 = (TextView) rootView.findViewById(R.id.section_label5);
+            p5.setText(getString(R.string.section_content_getstarted_p5));
+            TextView p6 = (TextView) rootView.findViewById(R.id.section_label6);
+            p6.setText(getString(R.string.section_content_getstarted_p6));
+            TextView p7 = (TextView) rootView.findViewById(R.id.section_label7);
+            p7.setText(getString(R.string.section_content_getstarted_p7));
+            TextView p8 = (TextView) rootView.findViewById(R.id.section_label8);
+            p8.setText(getString(R.string.section_content_getstarted_p8));
+            return rootView;
+        }
+
+        private View CreateActionsPage(View rootView) {
+            TextView p1 = (TextView) rootView.findViewById(R.id.section_label1);
+            p1.setText(getString(R.string.section_content_getstarted_p1));
+            TextView p2 = (TextView) rootView.findViewById(R.id.section_label2);
+            p2.setText((getString(R.string.section_content_getstarted_p2)));
+            TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
+            p3.setText((getString(R.string.section_content_getstarted_p3)));
+            TextView p4 = (TextView) rootView.findViewById(R.id.section_label4);
+            p4.setText((getString(R.string.section_content_getstarted_p4)));
+            TextView p5 = (TextView) rootView.findViewById(R.id.section_label5);
+            p5.setText((getString(R.string.section_content_getstarted_p5)));
+            TextView p6 = (TextView) rootView.findViewById(R.id.section_label6);
+            p6.setText((getString(R.string.section_content_getstarted_p6)));
+            TextView p7 = (TextView) rootView.findViewById(R.id.section_label7);
+            p7.setText((getString(R.string.section_content_getstarted_p7)));
+            TextView p8 = (TextView) rootView.findViewById(R.id.section_label8);
+            p8.setText((getString(R.string.section_content_getstarted_p8)));
+            return rootView;
+        }
+
+        private View CreateBudgetingPage(View rootView) {
+            //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
+            textView.setText("Budgeting Time");
+            return rootView;
+        }
+
+        private View CreateContactPage(View rootView) {
+            //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
+            textView.setText("Contact");
+            return rootView;
+        }
+
+        private View CreateBugReportPage(View rootView) {
+            //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
+            textView.setText("Bug Report");
             return rootView;
         }
     }
@@ -173,7 +221,7 @@ public class ActivityInfo extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 8;
+            return 6;
         }
     }
 }

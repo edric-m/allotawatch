@@ -194,9 +194,12 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_about) {
             Intent i = new Intent(this, ActivityInfo.class);
+            i.putExtra(ActivityInfo.ARG_SECTION, 0);
             startActivity(i);
         } else if (id == R.id.nav_get_started) {
-
+            Intent i = new Intent(this, ActivityInfo.class);
+            i.putExtra(ActivityInfo.ARG_SECTION, 1);
+            startActivity(i);
         } else if (id == R.id.nav_actions) {
 
         } else if (id == R.id.nav_budget) {

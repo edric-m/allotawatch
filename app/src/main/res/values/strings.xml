@@ -9,5 +9,45 @@
     <string name="title_activity_new_task2">NewTaskActivity2</string>
     <string name="title_activity_settings2">SettingsActivity2</string>
     <string name="title_activity_info">ActivityInfo</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="info_title">Information</string>
+    <string name="section_content_about">
+        About\n\n
+        It’s a simple timer app that allows you to allocate the time in your working day for tasks that you need to get done\n
+        It was inspired by an article from waitbutwhy.com that highlights how limited our time is\n
+        It allows you to switch between tasks freely and still be sure you are properly investing the amount of time that you have.\n
+        While working on long term projects or goals have you ever felt bogged down or tired from working on the same thing for too long? Because if you are like me, you get bored of one thing very easily. When you get bored, switch to something else productive instead of procrastinating. It’s a good app for multitaskers.\n
+        Knowing how much time you’ve spent allows you to match it to how much work you’ve done forcing you to get a move on if needed.\n
+        Its best to back away for a while and take a break, but for how long? This app allows you to easily switch between them when you need to refresh your mind and body and work on something different for a while. Switching like this allows you to have a flexible and reactive schedule as opposed to a rigid one.\n
+        You will also be able to see how much time has passed since your last break and recommends taking one every hour. It also warns you when you’ve been taking too long a break.\n
+        This app should allow you to accomplish more in a day to spend your time more effectively.\n
+        The app is useful for long term goals or short-term workouts. \n
+        You can create a plan for your day and easily budget the time you have available between the tasks that you must do.\n
+    </string>
+    <string name="section_content_getstarted_p1">
+        Get Started\n\n
+        1. Add new tasks by clicking on the floating action button.\n
+    </string>
+    <string name="section_content_getstarted_p2">
+        2. Specify a name and use the sliders to set how much time you need to spend on this task.\n
+    </string>
+    <string name="section_content_getstarted_p3">
+        3. You can cancel your input or create the task.\n
+    </string>
+    <string name="section_content_getstarted_p4">
+        4. The name must be unique, if not, it will replace the time of the existing task.\n
+    </string>
+    <string name="section_content_getstarted_p5">
+        5. Click the play button to start or stop the tracking.\n
+    </string>
+    <string name="section_content_getstarted_p6">
+        6. Use swipe gestures on the home screen to control the time tracker.\n
+        \ta. Left or right switches the task\n
+        \tb. Down puts you on break.\n
+    </string>
+    <string name="section_content_getstarted_p7">
+        7. You can also control the task from the notification icon.\n
+    </string>
+    <string name="section_content_getstarted_p8">
+        8. You can see information about the time tracking below the timer it shows.\n
+    </string>
 </resources>
