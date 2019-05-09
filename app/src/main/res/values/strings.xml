@@ -122,9 +122,6 @@
     <string name="section_content_contact_p2">
         message\n
     </string>
-    <string name="section_content_contact_p3">
-        your contact email\n
-    </string>
     <string name="section_content_bugs_p1">
         Report bugs\n\n
     </string>
