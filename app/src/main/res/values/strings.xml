@@ -116,10 +116,14 @@
         For example.\n
         If I\n
     </string>
+    <string name="send">send</string>
     <string name="section_content_contact_p1">
         Contact\n\n
     </string>
     <string name="section_content_contact_p2">
+        subject\n
+    </string>
+    <string name="section_content_contact_p3">
         message\n
     </string>
     <string name="section_content_bugs_p1">
@@ -141,9 +145,6 @@
         actual result\n
     </string>
     <string name="section_content_bugs_p7">
-        visual proof (screenshots, videos)\n
-    </string>
-    <string name="section_content_bugs_p8">
         additional notes\n
     </string>
 </resources>

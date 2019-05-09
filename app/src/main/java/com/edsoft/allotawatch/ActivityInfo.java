@@ -1,5 +1,6 @@
 package com.edsoft.allotawatch;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,9 +17,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ActivityInfo extends AppCompatActivity {
 
@@ -191,49 +194,89 @@ public class ActivityInfo extends AppCompatActivity {
 
         private View CreateContactPage(LayoutInflater inflater, ViewGroup container) {
             View rootView = inflater.inflate(R.layout.fragment_activity_contact, container, false);
-            EditText editText;
+            final EditText editText2,editText3;
             TextView p1 = (TextView) rootView.findViewById(R.id.section_label1);
             p1.setText(getString(R.string.section_content_contact_p1));
             TextView p2 = (TextView) rootView.findViewById(R.id.section_label2);
             p2.setText((getString(R.string.section_content_contact_p2)));
-            editText = (EditText) rootView.findViewById(R.id.section_input2);
-            editText.setVisibility(View.VISIBLE);
+            editText2 = (EditText) rootView.findViewById(R.id.section_input2);
+            editText2.setVisibility(View.VISIBLE);
+            TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
+            p3.setText((getString(R.string.section_content_contact_p3)));
+            editText3 = (EditText) rootView.findViewById(R.id.section_input3);
+            editText3.setVisibility(View.VISIBLE);
+            Button sendButton = (Button) rootView.findViewById(R.id.section_send_button);
+            sendButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(Intent.ACTION_SEND);
+                    i.setType("message/rfc822");
+                    i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"edsoft7@gmail.com"});
+                    i.putExtra(Intent.EXTRA_SUBJECT, editText2.getText().toString());
+                    i.putExtra(Intent.EXTRA_TEXT   , editText3.getText().toString());
+                    try {
+                        startActivity(Intent.createChooser(i, "Send mail..."));
+                    } catch (android.content.ActivityNotFoundException ex) {
+                        Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
             return rootView;
         }
 
         private View CreateBugReportPage(LayoutInflater inflater, ViewGroup container) {
             View rootView = inflater.inflate(R.layout.fragment_activity_contact, container, false);
-            EditText editText;
+            final EditText editText2, editText3, editText4, editText5, editText6, editText7;
             TextView p1 = (TextView) rootView.findViewById(R.id.section_label1);
             p1.setText(getString(R.string.section_content_bugs_p1));
             TextView p2 = (TextView) rootView.findViewById(R.id.section_label2);
             p2.setText((getString(R.string.section_content_bugs_p2)));
-            editText = (EditText) rootView.findViewById(R.id.section_input2);
-            editText.setVisibility(View.VISIBLE);
+            editText2 = (EditText) rootView.findViewById(R.id.section_input2);
+            editText2.setVisibility(View.VISIBLE);
             TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
             p3.setText((getString(R.string.section_content_bugs_p3)));
-            editText = (EditText) rootView.findViewById(R.id.section_input3);
-            editText.setVisibility(View.VISIBLE);
+            editText3 = (EditText) rootView.findViewById(R.id.section_input3);
+            editText3.setVisibility(View.VISIBLE);
             TextView p4 = (TextView) rootView.findViewById(R.id.section_label4);
             p4.setText((getString(R.string.section_content_bugs_p4)));
-            editText = (EditText) rootView.findViewById(R.id.section_input4);
-            editText.setVisibility(View.VISIBLE);
+            editText4 = (EditText) rootView.findViewById(R.id.section_input4);
+            editText4.setVisibility(View.VISIBLE);
             TextView p5 = (TextView) rootView.findViewById(R.id.section_label5);
             p5.setText((getString(R.string.section_content_bugs_p5)));
-            editText = (EditText) rootView.findViewById(R.id.section_input5);
-            editText.setVisibility(View.VISIBLE);
+            editText5 = (EditText) rootView.findViewById(R.id.section_input5);
+            editText5.setVisibility(View.VISIBLE);
             TextView p6 = (TextView) rootView.findViewById(R.id.section_label6);
             p6.setText((getString(R.string.section_content_bugs_p6)));
-            editText = (EditText) rootView.findViewById(R.id.section_input6);
-            editText.setVisibility(View.VISIBLE);
+            editText6 = (EditText) rootView.findViewById(R.id.section_input6);
+            editText6.setVisibility(View.VISIBLE);
             TextView p7 = (TextView) rootView.findViewById(R.id.section_label7);
             p7.setText((getString(R.string.section_content_bugs_p7)));
-            editText = (EditText) rootView.findViewById(R.id.section_input7);
-            editText.setVisibility(View.VISIBLE);
-            TextView p8 = (TextView) rootView.findViewById(R.id.section_label8);
-            p8.setText((getString(R.string.section_content_bugs_p8)));
-            editText = (EditText) rootView.findViewById(R.id.section_input8);
-            editText.setVisibility(View.VISIBLE);
+            editText7 = (EditText) rootView.findViewById(R.id.section_input7);
+            editText7.setVisibility(View.VISIBLE);
+            Button sendButton = (Button) rootView.findViewById(R.id.section_send_button);
+            sendButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String subject = "AllotaWatch Bug Report - " + editText2.getText().toString();
+                    String message = "Feature Name:\n" + editText2.getText().toString() +
+                            "\n\nEnvironment:\n" + editText3.getText().toString() +
+                            "\n\nSteps To Reproduce:\n" + editText4.getText().toString() +
+                            "\n\nExpected Result:\n" + editText5.getText().toString() +
+                            "\n\nActual Result:\n" + editText6.getText().toString() +
+                            "\n\nAdditional Notes:\n" + editText7.getText().toString();
+
+                    Intent i = new Intent(Intent.ACTION_SEND);
+                    i.setType("message/rfc822");
+                    i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"edsoft7@gmail.com"});
+                    i.putExtra(Intent.EXTRA_SUBJECT, subject);
+                    i.putExtra(Intent.EXTRA_TEXT   , message);
+                    try {
+                        startActivity(Intent.createChooser(i, "Send mail..."));
+                    } catch (android.content.ActivityNotFoundException ex) {
+                        Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
             return rootView;
         }
     }
