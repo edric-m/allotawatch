@@ -38,6 +38,7 @@
         android:layout_marginLeft="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:maxLength="15"
         android:selectAllOnFocus="true"
         android:text="rename"
         android:gravity="center_horizontal"

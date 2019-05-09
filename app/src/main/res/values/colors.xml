@@ -7,4 +7,5 @@
     <color name="black">#000000</color>
     <color name="TextColor">#ffffff</color>
     <color name="colorPage">#5084d3</color>
+    <color name="textBoxHighlight">#FFFF9800</color>
 </resources>

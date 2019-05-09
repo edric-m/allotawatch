@@ -11,13 +11,23 @@
     android:id="@+id/constraintLayout_contact"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ActivityInfo$PlaceholderFragment">
+    tools:context=".ActivityInfo$PlaceholderFragment"
+    android:theme="@style/FormTheme">
+
+    <Button
+        android:id="@+id/section_send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
         android:id="@+id/section_label1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/section_send_button"
         app:layout_constraintLeft_toLeftOf="parent"/>
 
     <TextView
@@ -34,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/section_label2"
         app:layout_constraintLeft_toLeftOf="parent"
         android:visibility="invisible"
-        android:inputType="text"/>
+        android:maxLength="200"/>
 
     <TextView
         android:id="@+id/section_label3"
@@ -49,7 +59,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/section_label3"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:maxLength="200"/>
 
     <TextView
         android:id="@+id/section_label4"
@@ -64,7 +75,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/section_label4"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:maxLength="200"/>
 
     <TextView
         android:id="@+id/section_label5"
@@ -79,7 +91,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/section_label5"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:maxLength="200"/>
 
     <TextView
         android:id="@+id/section_label6"
@@ -94,7 +107,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/section_label6"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:maxLength="200"/>
 
     <TextView
         android:id="@+id/section_label7"
@@ -109,7 +123,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/section_label7"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:maxLength="200"/>
 
     <TextView
         android:id="@+id/section_label8"
@@ -124,29 +139,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/section_label8"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:maxLength="200"/>
 
     <TextView
         android:id="@+id/section_label9"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/section_input8"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <EditText
-        android:id="@+id/section_input9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/section_label9"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:visibility="invisible"/>
-
-    <Button
-        android:id="@+id/section_send_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="send"
-        app:layout_constraintTop_toBottomOf="@id/section_input9"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@+id/section_input7"
         app:layout_constraintLeft_toLeftOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

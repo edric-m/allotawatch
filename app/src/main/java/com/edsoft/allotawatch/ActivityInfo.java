@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -198,10 +199,6 @@ public class ActivityInfo extends AppCompatActivity {
             p2.setText((getString(R.string.section_content_contact_p2)));
             editText = (EditText) rootView.findViewById(R.id.section_input2);
             editText.setVisibility(View.VISIBLE);
-            TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
-            p3.setText((getString(R.string.section_content_contact_p3)));
-            editText = (EditText) rootView.findViewById(R.id.section_input3);
-            editText.setVisibility(View.VISIBLE);
             return rootView;
         }
 
@@ -237,10 +234,6 @@ public class ActivityInfo extends AppCompatActivity {
             TextView p8 = (TextView) rootView.findViewById(R.id.section_label8);
             p8.setText((getString(R.string.section_content_bugs_p8)));
             editText = (EditText) rootView.findViewById(R.id.section_input8);
-            editText.setVisibility(View.VISIBLE);
-            TextView p9 = (TextView) rootView.findViewById(R.id.section_label9);
-            p9.setText((getString(R.string.section_content_bugs_p9)));
-            editText = (EditText) rootView.findViewById(R.id.section_input9);
             editText.setVisibility(View.VISIBLE);
             return rootView;
         }
