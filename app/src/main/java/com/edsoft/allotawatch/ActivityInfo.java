@@ -144,18 +144,27 @@ public class ActivityInfo extends AppCompatActivity {
 
         private View CreateGetStartedPage(View rootView) {
             //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
+            ImageView imageView;
             TextView p1 = (TextView) rootView.findViewById(R.id.section_label1);
             p1.setText(getString(R.string.section_content_getstarted_p1));
+            imageView = (ImageView) rootView.findViewById(R.id.section_image1);
+            imageView.setImageResource(R.drawable.get_started_1);
             TextView p2 = (TextView) rootView.findViewById(R.id.section_label2);
             p2.setText(getString(R.string.section_content_getstarted_p2));
+            imageView = (ImageView) rootView.findViewById(R.id.section_image2);
+            imageView.setImageResource(R.drawable.get_started_2);
             TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
             p3.setText(getString(R.string.section_content_getstarted_p3));
             TextView p4 = (TextView) rootView.findViewById(R.id.section_label4);
             p4.setText(getString(R.string.section_content_getstarted_p4));
             TextView p5 = (TextView) rootView.findViewById(R.id.section_label5);
             p5.setText(getString(R.string.section_content_getstarted_p5));
+            imageView = (ImageView) rootView.findViewById(R.id.section_image5);
+            imageView.setImageResource(R.drawable.get_started_3);
             TextView p6 = (TextView) rootView.findViewById(R.id.section_label6);
             p6.setText(getString(R.string.section_content_getstarted_p6));
+            imageView = (ImageView) rootView.findViewById(R.id.section_image6);
+            imageView.setImageResource(R.drawable.get_started_4);
             TextView p7 = (TextView) rootView.findViewById(R.id.section_label7);
             p7.setText(getString(R.string.section_content_getstarted_p7));
             TextView p8 = (TextView) rootView.findViewById(R.id.section_label8);

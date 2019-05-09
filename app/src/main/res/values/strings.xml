@@ -42,24 +42,24 @@
         2. Specify a name and use the sliders to set how much time you need to spend on this task.\n
     </string>
     <string name="section_content_getstarted_p3">
-        3. You can cancel your input or create the task.\n
+        3. Then press the check button to create the task.\n
     </string>
     <string name="section_content_getstarted_p4">
-        4. The name must be unique, if not, it will replace the time of the existing task.\n
+        4. The name must be unique, if not, it will change the time of the existing task.\n
     </string>
     <string name="section_content_getstarted_p5">
-        5. Click the play button to start or stop the tracking.\n
+        5. Click the play button on the corner of the screen to start tracking.\n
     </string>
     <string name="section_content_getstarted_p6">
         6. Use swipe gestures on the home screen to control the time tracker.\n
-        \ta. Left or right switches the task\n
-        \tb. Down puts you on break.\n
+        \ta. Swipe left or right to switch the task\n
+        \tb. Swipe down to track break time.\n
     </string>
     <string name="section_content_getstarted_p7">
         7. You can also control the task from the notification icon.\n
     </string>
     <string name="section_content_getstarted_p8">
-        8. You can see information about the time tracking below the timer it shows.\n
+        8. You can delete tasks using the close button.\n
     </string>
     <string name="section_content_actions_p1">
         Actions\n\n
