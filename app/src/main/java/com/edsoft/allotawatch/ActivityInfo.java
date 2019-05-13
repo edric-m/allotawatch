@@ -137,7 +137,9 @@ public class ActivityInfo extends AppCompatActivity {
 
         private View CreateAboutPage(View rootView) {
             //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
+            TextView title = (TextView) rootView.findViewById(R.id.section_label1);
+            title.setText(getString(R.string.section_content_about_title));
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label2);
             textView.setText(getString(R.string.section_content_about));
             return rootView;
         }
@@ -146,29 +148,33 @@ public class ActivityInfo extends AppCompatActivity {
             //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
             ImageView imageView;
             TextView p1 = (TextView) rootView.findViewById(R.id.section_label1);
-            p1.setText(getString(R.string.section_content_getstarted_p1));
+            p1.setText(getString(R.string.section_content_getstarted_title));
             imageView = (ImageView) rootView.findViewById(R.id.section_image1);
             imageView.setImageResource(R.drawable.get_started_1);
             TextView p2 = (TextView) rootView.findViewById(R.id.section_label2);
-            p2.setText(getString(R.string.section_content_getstarted_p2));
+            p2.setText(getString(R.string.section_content_getstarted_p1));
             imageView = (ImageView) rootView.findViewById(R.id.section_image2);
             imageView.setImageResource(R.drawable.get_started_2);
             TextView p3 = (TextView) rootView.findViewById(R.id.section_label3);
-            p3.setText(getString(R.string.section_content_getstarted_p3));
+            p3.setText(getString(R.string.section_content_getstarted_p2));
             TextView p4 = (TextView) rootView.findViewById(R.id.section_label4);
-            p4.setText(getString(R.string.section_content_getstarted_p4));
+            p4.setText(getString(R.string.section_content_getstarted_p3));
             TextView p5 = (TextView) rootView.findViewById(R.id.section_label5);
-            p5.setText(getString(R.string.section_content_getstarted_p5));
+            p5.setText(getString(R.string.section_content_getstarted_p4));
             imageView = (ImageView) rootView.findViewById(R.id.section_image5);
             imageView.setImageResource(R.drawable.get_started_3);
             TextView p6 = (TextView) rootView.findViewById(R.id.section_label6);
-            p6.setText(getString(R.string.section_content_getstarted_p6));
+            p6.setText(getString(R.string.section_content_getstarted_p5));
             imageView = (ImageView) rootView.findViewById(R.id.section_image6);
             imageView.setImageResource(R.drawable.get_started_4);
             TextView p7 = (TextView) rootView.findViewById(R.id.section_label7);
-            p7.setText(getString(R.string.section_content_getstarted_p7));
+            p7.setText(getString(R.string.section_content_getstarted_p6));
+            imageView = (ImageView) rootView.findViewById(R.id.section_image7);
+            imageView.setImageResource(R.drawable.get_started_5);
             TextView p8 = (TextView) rootView.findViewById(R.id.section_label8);
-            p8.setText(getString(R.string.section_content_getstarted_p8));
+            p8.setText(getString(R.string.section_content_getstarted_p7));
+            TextView p9 = (TextView) rootView.findViewById(R.id.section_label9);
+            p9.setText(getString(R.string.section_content_getstarted_p8));
             return rootView;
         }
 
@@ -196,8 +202,12 @@ public class ActivityInfo extends AppCompatActivity {
 
         private View CreateBudgetingPage(View rootView) {
             //View rootView = inflater.inflate(R.layout.fragment_activity_info, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label1);
+            TextView title = (TextView) rootView.findViewById(R.id.section_label1);
+            title.setText(getString(R.string.section_content_budget_title));
+            TextView textView = (TextView) rootView.findViewById(R.id.section_label2);
             textView.setText(getString(R.string.section_content_budget));
+            TextView p2 = (TextView) rootView.findViewById(R.id.section_label3);
+            p2.setText(getString(R.string.section_content_budget_p2));
             return rootView;
         }
 

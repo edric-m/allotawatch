@@ -125,7 +125,7 @@ public class BroadcastService extends Service {
                         //.setSmallIcon(R.drawable.abc)
                         .setSmallIcon(R.drawable.ic_action_name)
                         .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),
-                                R.mipmap.ic_launcher_round))
+                                R.mipmap.ic_notification_round))
                         .setContentTitle("10 mins break elapsed")
                         .setContentText("youve been on break for "+Integer.toString(factor*10)+" minutes")
                         .setLights(Color.WHITE,1,1)

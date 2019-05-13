@@ -686,7 +686,7 @@ public class MainActivity extends AppCompatActivity
     private void showTaskInfo() {
         int index = list.getCurrentTaskIndex();
         //show "Task 1 of 5"
-        mtaskIndex.setText("#" + Integer.toString(index) + "/" + Integer.toString(list.size()));
+        mtaskIndex.setText("Task " + Integer.toString(index) + " of " + Integer.toString(list.size()));
         //finish time and date for this task + time left
         mtaskIndex.append("\n\nTime since last break: " + formatMsToTime(switchedTime));
         //mtaskIndex.append("\nTotal time spent this session: " + formatMsToTime(list.getList().get(index-1).getTimeSpent()));

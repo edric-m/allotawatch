@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/btn_cyclePlan"
+        android:icon="@drawable/ic_loop_black_24dp"
+        android:title="Load"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/btn_loadPlan"
         android:icon="@drawable/ic_white_load"
         android:title="Load"

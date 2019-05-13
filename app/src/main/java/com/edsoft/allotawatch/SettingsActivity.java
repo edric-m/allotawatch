@@ -238,6 +238,9 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
             case R.id.btn_done:
                 finish();
                 break;
+            case R.id.btn_cyclePlan:
+                switchPlan();
+                break;
             default:
                 break;
         }
@@ -288,6 +291,10 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
             totalMs = taskList.getTotalMs();
             //calculateTime();
         }
+        mTimeText.setText(" - hrs       work per day");
+        //mTimeSeekbar.setProgress(1);
+        mPeriodText.setText(" set number of days");
+        period = 1;
         //recyclerView = new RecyclerView(this);
         //recyclerView = findViewById(R.id.recyclerv_view); //these two lines needed?
         //recyclerView.invalidate();
@@ -311,6 +318,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
             }
         });
         */
+
     }
 
     public void setChangesMade() {
@@ -520,7 +528,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
             if (count > 0) {
                 changesMade = true;
                 plan = (taskList.getTotalMs() / (mintoms * 10));
-                mTimeText.setText(" " + new DecimalFormat("#.#").format(plan * 0.16666) + " hrs       work per day");
+                //mTimeText.setText(" " + new DecimalFormat("#.#").format(plan * 0.16666) + " hrs       work per day");
                 initRecyclerView(taskList.getTotalMs());
             } else {
                 finish();
