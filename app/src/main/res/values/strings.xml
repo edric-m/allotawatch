@@ -11,40 +11,42 @@
     <string name="title_activity_info">ActivityInfo</string>
     <string name="info_title">Help</string>
     <string name="section_content_about_title">
-        About\n\n
+        About\n
     </string>
     <string name="section_content_about">
-        its a time management tool. (and multitasking app)
-        lets you track how you spend your time.
-        the app can also track your break time
-        easy to use for short term goals and long term
-        short term because timers are easy to add and switch between tasks
-        its flexible and even has a quick timer function for off the cuff alarms
-        its mainly designed for long term goals because of the budgeting functionality
-        long term because you can plan your time for the next two weeks. you list what you have to do
-        then divide the time you have among those tasks.
-        It was inspired by an article from waitbutwhy.com that highlights how limited our time is\n
-        It allows you to switch between tasks freely and still be sure you are properly investing
-        the amount of time that you have.
-        made because i got bored doing one thing for too long
-        by planning you can switch tasks whenever you want and be confident you are putting the
-        correct amount of time into what you want to accomplish and not waste any time
-        (it lets you accomplish multiple things and not waste any time)
-        (so you plan what you want to accomplish in a day and switch between them when you get tired of
-        one task. because we need to step away from something once in a while and refresh ourselves by switching
-        to something else productive.) Switching like this allows you to have a flexible and reactive schedule
-        as opposed to a rigid one.
-        The app also shows you the overall amount of time that youve spent on a task as wel as how long
-        since your last break and how long youve been on a break for
+        This app is a time management tool and multitasking app that lets you track how you spend
+        your time. The app can also your time on break. It can be used for short term
+        goals like cooking or workouts as well as tracking long term goals or projects.
+        Adding timers is quick and simple and switching between them only requires swiping the screen.
+        The apps planning feature lets you list what you need to have completed and lets you
+        divide your time between those tasks over a long period of time. This way you can set your
+        goals first, and then try to meet them.\n\n
 
-        with this app you set the time for your goals first, then try to meet them
+        The app was inspired by an article from waitbutwhy.com that highlights how limited and valuable
+        our time is. When we subtract our sleep, time for loved ones, and leisure, there is very limited
+        time left for work. The app will help in ensuring you put it the time needed for work and
+        effectively use it so that you can have a healthy balance of work, leisure, and rest.\n\n
 
+        Being able to quickly switch between tasks was added to allow having a flexible and reactive
+        schedule instead of a rigid one. I am unable to focus on a single task for too long and my
+        productiveness drops, I find that it helps to switch to another task that I want to complete
+        to refresh myself as well as stay productive.\n\n
+
+        Other features that aid productiveness are,\n
+            \t- parallel alarms for off the cuff alarms,\n
+            \t- notifications on how long a break has been going for,\n
+            \t- task information like overall time spent doing something as well as time since your last break,\n
+            \t- notifications for when you\'ve met your time investment goal, and\n
+            \t- the ability to control the app from a notification icon.\n\n
+
+        If you are interested in the article from waitbutwhy.com about spending your time, the article
+        is called \'100 Blocks a Day\' written by Tim Urban, and the link
+        https://waitbutwhy.com/2016/10/100-blocks-day.html
     </string>
     <string name="section_content_getstarted_title">
-        Get Started\n\n
+        Get Started\n
     </string>
     <string name="section_content_getstarted_p1">
-        Get Started\n\n
         1. Add new tasks by clicking on the floating action button.\n
     </string>
     <string name="section_content_getstarted_p2">
@@ -72,54 +74,52 @@
         8. You can delete tasks using the close button.\n
     </string>
     <string name="section_content_actions_p1">
-        Actions\n\n
+        Actions\n
+    </string>
+    <string name="section_content_actions_p2">
         - Switching tasks\n
         \tSwipe left or right at the home screen.\n
     </string>
-    <string name="section_content_actions_p2">
+    <string name="section_content_actions_p3">
         - Taking a break\n
         \tSwipe down at the home screen.\n
     </string>
-    <string name="section_content_actions_p3">
+    <string name="section_content_actions_p4">
         - Resuming a task\n
         \tTo resume tracking a task after taking a break swipe down at the break time screen.\n
     </string>
-    <string name="section_content_actions_p4">
+    <string name="section_content_actions_p5">
         - Quick alarm\n
         \tYou can set an alarm that will run parallel to the main timer. The ringing bell icon indicates
         that an alarm is already set.\n
     </string>
-    <string name="section_content_actions_p5">
+    <string name="section_content_actions_p6">
         - Save and view lists\n
         \tSwipe up at the home screen. Then press the save button. You can cycle through the lists by
         swiping up or pressing the next button.\n
     </string>
-    <string name="section_content_actions_p6">
+    <string name="section_content_actions_p7">
         - Start or stop the timer\n
         \tStart or stop time tracking, stopping will also stop the quick alarm. If you only need an
         alarm its recommended that you create a new task to do so.\n
     </string>
-    <string name="section_content_actions_p7">
-        - Delete task\n
-        \tClicking the close button at a task will do this. You can also do this at the budgeting page.\n
-    </string>
     <string name="section_content_actions_p8">
+        - Delete task\n
+        \tClicking the close button at a task will do this. You can also do this at the budgeting page.\n\n
         - Use a list\n
-        \tUse the list that is currently displayed for tracking.\n
+        \tUse the list that is currently displayed for tracking.\n\n
+        - New page\n
+        \tCreates a new list but deletes the one currently in use.\n\n
     </string>
     <string name="section_content_actions_p9">
-        - New page\n
-        \tCreates a new list but deletes the one currently in use.\n
-    </string>
-    <string name="section_content_actions_p10">
         - Adding time to task\n
         \tTo add or subtract time from a task you need to press the add task button, then
         overwrite the task with the new time that you want.\n
     </string>
     <string name="section_content_budget_title">
-        Budget time\n\n
+        Budget time\n
     </string>
-    <string name="section_content_budget">
+    <string name="section_content_budget_p2">
         Swipe up to see lists of tasks. For each list you can allocate how much time you want to spend
         on those tasks at the bottom.\n
         You allocate how much time per day then how many days you want to spend. The max per day is 16
@@ -130,13 +130,18 @@
         It shows how much break time is recommended for the time spent working in brackets. It
         recommends 10 minutes per work hour and will be tracked when switching to break.\n\n
     </string>
-    <string name="section_content_budget_p2">
-        To budget time:\n
-        1. Swipe up from the home screen to budget your time.\n
-        2. First we set the amount of hours per day that you want to set aside for work.\n
-        3. You can then set how many days you want to monitor your time.\n
-        4. Finaly you then divide the time you\'ve set among the tasks in the list using the
-        sliders.\n
+    <string name="section_content_budget">
+        To budget time:\n\n
+        1. Swipe up from the home screen to plan your time.\n\n
+        2. First we set the amount of hours per day that you want to set aside for work at the bottom
+        of the screen.\n\n
+        3. You can then set how many days you want to monitor your time.\n\n
+        4. The number on the top shows the total amount of time for the tasks. In brackets it shows
+        the recommended amount of break time you should have (which is 10 min every hour).\n\n
+        5. Finally you then divide the time you\'ve set among the tasks in the list using the
+        sliders.\n\n
+        6. The numbers beside the task show how much time will be given to the task.\n\n
+        7. You can remove tasks by pressing the close button beside the task.\n\n
     </string>
     <string name="send">send</string>
     <string name="section_content_contact_p1">

@@ -206,8 +206,8 @@ public class ActivityInfo extends AppCompatActivity {
             title.setText(getString(R.string.section_content_budget_title));
             TextView textView = (TextView) rootView.findViewById(R.id.section_label2);
             textView.setText(getString(R.string.section_content_budget));
-            TextView p2 = (TextView) rootView.findViewById(R.id.section_label3);
-            p2.setText(getString(R.string.section_content_budget_p2));
+            //TextView p2 = (TextView) rootView.findViewById(R.id.section_label3);
+            //p2.setText(getString(R.string.section_content_budget_p2));
             return rootView;
         }
 
