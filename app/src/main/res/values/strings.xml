@@ -62,10 +62,10 @@
         5. Click the play button on the corner of the screen to start tracking.\n
     </string>
     <string name="section_content_getstarted_p6">
-        6. Use swipe gestures on the home screen to control the time tracker.\n
+        \n\n6. Use swipe gestures on the home screen to control the time tracker.\n
         \ta. Swipe left or right to switch the task\n
         \tb. Swipe down to track break time.\n
-        \tc. Swipe up on the break screen to stop break time.\n
+        \tc. Swipe up on the break screen to stop break time.
     </string>
     <string name="section_content_getstarted_p7">
         7. You can also control the task from the notification icon.\n
@@ -109,7 +109,7 @@
         - Use a list\n
         \tUse the list that is currently displayed for tracking.\n\n
         - New page\n
-        \tCreates a new list but deletes the one currently in use.\n\n
+        \tCreates a new list but deletes the one currently in use.\n
     </string>
     <string name="section_content_actions_p9">
         - Adding time to task\n
@@ -117,21 +117,9 @@
         overwrite the task with the new time that you want.\n
     </string>
     <string name="section_content_budget_title">
-        Budget time\n
-    </string>
-    <string name="section_content_budget_p2">
-        Swipe up to see lists of tasks. For each list you can allocate how much time you want to spend
-        on those tasks at the bottom.\n
-        You allocate how much time per day then how many days you want to spend. The max per day is 16
-        hours.\n
-        Then you can ration out that time between the tasks in the list using the sliders. The time
-        allocated to that task is on the left margin adjacent it. Sliders at the same position will
-        have time divided equally.\n
-        It shows how much break time is recommended for the time spent working in brackets. It
-        recommends 10 minutes per work hour and will be tracked when switching to break.\n\n
+        Plan time\n
     </string>
     <string name="section_content_budget">
-        To budget time:\n\n
         1. Swipe up from the home screen to plan your time.\n\n
         2. First we set the amount of hours per day that you want to set aside for work at the bottom
         of the screen.\n\n

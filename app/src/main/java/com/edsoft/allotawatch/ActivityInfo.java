@@ -208,6 +208,8 @@ public class ActivityInfo extends AppCompatActivity {
             textView.setText(getString(R.string.section_content_budget));
             //TextView p2 = (TextView) rootView.findViewById(R.id.section_label3);
             //p2.setText(getString(R.string.section_content_budget_p2));
+            ImageView imageView = (ImageView) rootView.findViewById(R.id.section_image2);
+            imageView.setImageResource(R.drawable.planpage_1);
             return rootView;
         }
 
