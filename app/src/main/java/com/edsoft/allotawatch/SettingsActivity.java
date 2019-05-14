@@ -508,7 +508,7 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
                 if(selectedPlan == 0) {
                     mPlanText.setText("List in use");
                 } else {
-                    mPlanText.setText("List: " + Integer.toString(selectedPlan));
+                    mPlanText.setText("Page: " + Integer.toString(selectedPlan));
                 }
                 selectedPlan++;
                 ctr++;

@@ -17,7 +17,7 @@
                 <item
                     android:id="@+id/nav_actions"
                     android:icon="@drawable/ic_info_black_24dp"
-                    android:title="Actions" />
+                    android:title="Controls" />
                 <item
                     android:id="@+id/nav_budget"
                     android:icon="@drawable/ic_equalizer_black_24dp"
