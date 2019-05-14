@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +41,6 @@ public class DialogPlan extends DialogFragment {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: closing dialog");
                 getDialog().dismiss();
             }
         });
@@ -51,7 +49,6 @@ public class DialogPlan extends DialogFragment {
         p1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: capturing input");
 
                 mOnInputListener.savePlan(1);
 
@@ -62,7 +59,6 @@ public class DialogPlan extends DialogFragment {
         p2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: capturing input");
 
                 mOnInputListener.savePlan(2);
 
@@ -73,7 +69,6 @@ public class DialogPlan extends DialogFragment {
         p3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: capturing input");
 
                 mOnInputListener.savePlan(3);
 
@@ -84,7 +79,6 @@ public class DialogPlan extends DialogFragment {
         p4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: capturing input");
 
                 mOnInputListener.savePlan(4);
 
@@ -95,7 +89,6 @@ public class DialogPlan extends DialogFragment {
         p5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: capturing input");
 
                 mOnInputListener.savePlan(5);
 
@@ -112,7 +105,6 @@ public class DialogPlan extends DialogFragment {
         try{
             mOnInputListener = (OnInputListener) getActivity();
         }catch (ClassCastException e){
-            Log.e(TAG, "onAttach: ClassCastException: " + e.getMessage() );
         }
     }
 }

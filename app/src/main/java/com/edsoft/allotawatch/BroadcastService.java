@@ -17,7 +17,6 @@ import android.os.PowerManager;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import java.util.Locale;
 
@@ -48,7 +47,6 @@ public class BroadcastService extends Service {
     public void onCreate() {
         super.onCreate();
         //paused = false;
-        Log.d(TAG, "Starting service timer...");
         //get the time needed to set timer from an intents extra
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -178,7 +176,6 @@ public class BroadcastService extends Service {
         //unregister receiver?
         wl.release();
         cdt.cancel();
-        Log.d(TAG, "service timer cancelled");
         super.onDestroy();
     }
 
@@ -197,7 +194,6 @@ public class BroadcastService extends Service {
             taskName = intent.getStringExtra("task_name");
             //cdt.cancel();
             if(taskTime > 0)
-                Log.d(TAG, "time good");
             timerStart(taskTime);
         }
         //Log.d(TAG, "onStartCommand called");

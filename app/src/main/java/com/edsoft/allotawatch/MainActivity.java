@@ -18,7 +18,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -377,7 +376,6 @@ public class MainActivity extends AppCompatActivity
         toggleTimer();
         mTimerRunning = true;
 
-        Log.d("MyActivity", "requestCode:"+Integer.toString(requestCode) + " resultCode:"+Integer.toString(resultCode));
         refreshDisplay(!mTimerRunning); //fix this, its confusing
         if (resultCode == RESULT_OK) {
             switch(requestCode) {
@@ -458,7 +456,6 @@ public class MainActivity extends AppCompatActivity
 
     private void saveDb() {
         //super.finish();
-        Log.d("MyActivity", "save called" );
         //tasks t = new tasks();
         //t.getList() = list.getList();
         try {
@@ -466,7 +463,6 @@ public class MainActivity extends AppCompatActivity
             if(list.size() > 0)
                 db.updateAllTasks(list.getList(), 0);
         } catch (Exception e) {
-            Log.d("MyActivity", e.getMessage());
         }
     }
 
@@ -569,7 +565,6 @@ public class MainActivity extends AppCompatActivity
             i.putExtra("task_name", selectedTask.getName());
             if(mTimerRunning) {
 
-                Log.d("MyActivity", "time send");
             } else {
                 i.putExtra("paused",true);
 
@@ -593,7 +588,6 @@ public class MainActivity extends AppCompatActivity
             //unregister reciever
             this.unregisterReceiver(br);
             //stop service
-            Log.d("MyActivity", "service canceled" );
             //mAlarmBtn.setVisibility(View.INVISIBLE);
             invalidateOptionsMenu();
             alarmBtnVisible = false;

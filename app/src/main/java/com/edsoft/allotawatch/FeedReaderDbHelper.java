@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.LinkedList;
 
@@ -72,7 +71,6 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
     ///////GROUP TABLE FUNCTIONS
     public boolean addToGroup(String name, long time, int plan) {
-        Log.d("GroupHelper", "addToGroup() called name:" + name + " plan:" + Integer.toString(plan));
         SQLiteDatabase db = this.getReadableDatabase();
         //int time = 0;
 
@@ -91,7 +89,6 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         }
         */
 
-        Log.d("GroupHelper", "readTask() finished id:" + Integer.toString(taskid));
         if(taskid == -1) {
             return false;
         } else {
@@ -124,15 +121,12 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
     private int readTask(String name, SQLiteDatabase db) { //TODO rename gettaskid
         int id = -1;
-        Log.d("GroupHelper", "readTask() entered");
         //SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT " + DbContract.FeedEntry._ID + " FROM "+ DbContract.FeedEntry.TASK_TABLE_NAME+" WHERE " +
                 DbContract.FeedEntry.TASK_COLUMN_NAME+ "='"+name+"'";
         Cursor res =  db.rawQuery( query, null );
-        Log.d("GroupHelper", "readTask() query executed");
         if(res.moveToFirst()) {
             id = res.getInt(res.getColumnIndex(DbContract.FeedEntry._ID));
-            Log.d("GroupHelper", "readTask() id fetched");
         }
         return id;
     }
@@ -150,28 +144,21 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                 DbContract.FeedEntry._ID + " WHERE " +
                 DbContract.TaskGroupEntry.GROUP_COLUMN_PLAN_ID + " = " +
                 Integer.toString(planId);
-        Log.d("SwitchPlan", "try query");
         Cursor res =  db.rawQuery( query, null );
-        Log.d("SwitchPlan", "query ok query count: " + Integer.toString(res.getCount()));
         res.moveToFirst();
         while(!res.isAfterLast()){
             taskList.addTask(
                     res.getString(res.getColumnIndex(DbContract.FeedEntry.TASK_COLUMN_NAME)),
                     res.getInt(res.getColumnIndex(DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_TIME)),
                     res.getInt(res.getColumnIndex(DbContract.FeedEntry.TASK_COLUMN_TIME_SPENT)));
-            Log.d("SwitchPlan", "task added to array");
             res.moveToNext();
         }
-        Log.d("SwitchPlan", "readPlan ended ok");
         return taskList;
     }
 
     public boolean deleteTaskFromGroup(String name, int planid) {//delete from group table
         SQLiteDatabase db = this.getReadableDatabase();
-        Log.d("delete", "Name: "+name);
-        Log.d("delete", "Plan ID: "+Integer.toString(planid));
         int id = readTask(name, db);
-        Log.d("delete", "ID: "+Integer.toString(id));
         //String[] selectionArgs = { id };
         /*String query = "DELETE FROM" + DbContract.TaskGroupEntry.GROUP_TABLE_NAME +
                 "WHERE " + DbContract.TaskGroupEntry.GROUP_COLUMN_TASK_ID +

@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+//import android.util.Log;
 import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -305,7 +305,6 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
         recyclerView.setAdapter(adapter);
         //recyclerView.s
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        Log.d("recyclerview", Integer.toString(recyclerView.getAdapter().getItemCount()));
         //recyclerView.getAdapter().notifyDataSetChanged();
         //recyclerView.invalidate();
         /* //use intents inside the viewholder?
@@ -354,7 +353,6 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
         View itemView;
         //RecyclerView.Adapter item;
         DecimalFormat df = new DecimalFormat("#.#");
-        Log.d("recyclerview", Integer.toString(count));
         //recyclerView.getAdapter().notifyDataSetChanged();
         //itemView = recyclerView.getRootView();
 
@@ -448,13 +446,13 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
 
     @Override
     public void savePlan(int planNum) {
-        Log.d("SavePlan", "write started");
         FeedReaderDbHelper db = new FeedReaderDbHelper(this);
         db.deletePlan(planNum);
         db.updateAllTasks(taskList.getList(), planNum);
         for(int x=0;x<count;x++){
-            if(!db.addToGroup(taskList.getList().get(x).getName(), taskList.getList().get(x).getTimeAllocated(), planNum))
-                Log.d("SavePlan", "write to group db failed");
+            if(!db.addToGroup(taskList.getList().get(x).getName(), taskList.getList().get(x).getTimeAllocated(), planNum)) {
+                //db write failed
+            }
         }
 
     }
@@ -484,7 +482,6 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
             plan = (taskList.getTotalMs() / (mintoms * 10));
             mTimeText.setText(" " + new DecimalFormat("#.#").format(plan * 0.16666) + " hrs       work per day");
             initRecyclerView(taskList.getTotalMs());
-            Log.d("deletetaskfromsettings", "delete " + name);
         } else {
             //finish();
             switchPlan();
@@ -496,7 +493,6 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
         //if(selectedPlan > 5) {
         //    selectedPlan = 0;
         //}
-        Log.d("SwitchPlan", "started");
         //load tasklist with those from next plan
         try {
             FeedReaderDbHelper db = new FeedReaderDbHelper(this);
@@ -534,7 +530,6 @@ public class SettingsActivity extends AppCompatActivity implements DialogPlan.On
                 finish();
             }
         } catch (Exception e) {
-            Log.d("SwitchPlan", "error in readPlan()");
         }
     }
 

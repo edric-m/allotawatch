@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -58,7 +57,6 @@ public class NewTaskActivity extends AppCompatActivity {
         setupSeekbars();
         setUpFineButtons();
         planSet = i.getIntExtra("plan", 0);
-        Log.d("NewTaskActivity", "onCreate called");
     }
 
     @Override
