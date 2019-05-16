@@ -119,7 +119,7 @@ public class BroadcastService extends Service {
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this, "default")
+                new NotificationCompat.Builder(this, "allotawatch_notif")
                         //.setSmallIcon(R.drawable.abc)
                         .setSmallIcon(R.drawable.ic_action_name)
                         .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),
@@ -145,7 +145,7 @@ public class BroadcastService extends Service {
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this, "default")
+                new NotificationCompat.Builder(this, "allotawatch_notif")
                         //.setSmallIcon(R.drawable.abc)
                         .setSmallIcon(R.drawable.ic_action_name)
                         .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),
@@ -207,7 +207,7 @@ public class BroadcastService extends Service {
         //Intent intent = new Intent();
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent,0); //TODO: check flag is ok
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"default");
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"allotawatch_notif");
 
         builder.setSmallIcon(R.drawable.ic_action_name);
         builder.setLargeIcon(BitmapFactory.decodeResource(this.getResources(),

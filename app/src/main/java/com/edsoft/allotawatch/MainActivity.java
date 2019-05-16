@@ -756,7 +756,7 @@ public class MainActivity extends AppCompatActivity
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this, "default")
+                new NotificationCompat.Builder(this, "allotawatch_notif")
                         //.setSmallIcon(R.drawable.abc)
                         .setSmallIcon(R.drawable.ic_action_name)
                         .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),
