@@ -330,17 +330,17 @@ public class ActivityInfo extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position+1) {
                 case 1:
-                    return "1";
+                    return "About";
                 case 2:
-                    return "2";
+                    return "Get Started";
                 case 3:
-                    return "3";
+                    return "Controls";
                 case 4:
-                    return "4";
+                    return "Planning";
                 case 5:
-                    return "5";
+                    return "Contact";
                 case 6:
-                    return "6";
+                    return "Report Bugs";
             }
             return null;
         }
