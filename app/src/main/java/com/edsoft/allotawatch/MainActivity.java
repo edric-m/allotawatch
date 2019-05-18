@@ -1,6 +1,7 @@
 package com.edsoft.allotawatch;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -11,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
 import android.support.constraint.ConstraintLayout;
@@ -37,6 +39,8 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, DialogAlarm.OnInputListener {
+
+    public static final String CHANNEL_ID = "allotawatch";
 
     private static final String BREAK_TIME_TEXT = "work break";/*!< Constant used when setting a textview */
     private enum Direction {
@@ -108,6 +112,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -129,6 +134,7 @@ public class MainActivity extends AppCompatActivity
 
         initView();
         initList();
+        initNotificationChannel();
     }
 
     @Override
@@ -282,6 +288,22 @@ public class MainActivity extends AppCompatActivity
             //do something else
         }
         breakRecommend = ((list.getTotalMs()/3600000)*600000);
+    }
+
+    private void initNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
     //////////////////////////////////////////////////////////////
     //                  ACTIVITY METHODS
@@ -756,7 +778,7 @@ public class MainActivity extends AppCompatActivity
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this, "allotawatch_notif")
+                new NotificationCompat.Builder(this, MainActivity.CHANNEL_ID)
                         //.setSmallIcon(R.drawable.abc)
                         .setSmallIcon(R.drawable.ic_action_name)
                         .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),

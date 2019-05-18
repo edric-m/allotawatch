@@ -10,6 +10,8 @@
     <string name="title_activity_settings2">SettingsActivity2</string>
     <string name="title_activity_info">ActivityInfo</string>
     <string name="info_title">Help</string>
+    <string name="channel_name">allotawatch.channel</string>
+    <string name="channel_description">allotawatch_notifications</string>
     <string name="section_content_about_title">
         About\n
     </string>
